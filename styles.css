@@ -1,0 +1,335 @@
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+		
+		/* Greek letter background */
+		#greek-letter-bg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: -1;
+		}
+
+		.greek-letter {
+			position: absolute;
+			font-family: 'GFS Didot', serif;
+			font-size: 1.5rem;
+			color: white;
+			opacity: 0;
+			animation: floatLetter 15s linear infinite;
+		}
+
+		@keyframes floatLetter {
+			0% {
+				transform: translateY(100vh) rotate(0deg);
+				opacity: 0;
+			}
+			5% {
+				opacity: 0.1;
+			}
+			95% {
+				opacity: 0.1;
+			}
+			100% {
+				transform: translateY(-20vh) rotate(360deg);
+				opacity: 0;
+			}
+		}
+
+        body {
+            font-family: 'GFS Neohellenic', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+            min-height: 100vh;
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 20%),
+                radial-gradient(circle at 90% 80%, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 20%);
+        }
+
+        /* Greek letter background */
+        .greek-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ctext x='10' y='20' font-family='GFS Didot' font-size='16' fill='rgba(255,255,255,0.05)'%3EΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ%3C/text%3E%3Ctext x='0' y='50' font-family='GFS Didot' font-size='18' fill='rgba(255,255,255,0.04)'%3Eαβγδεζηθικλμνξοπρστυφχψω%3C/text%3E%3Ctext x='30' y='80' font-family='GFS Didot' font-size='14' fill='rgba(255,255,255,0.03)'%3EΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ%3C/text%3E%3Ctext x='20' y='120' font-family='GFS Didot' font-size='20' fill='rgba(255,255,255,0.02)'%3Eαβγδεζηθικλμνξοπρστυφχψω%3C/text%3E%3C/svg%3E");
+            background-repeat: repeat;
+            z-index: -1;
+            animation: moveBg 120s linear infinite;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header {
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tedx {
+            font-family: 'GFS Neohellenic', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: #b30000;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 0.5rem;
+            animation: fadeIn 1s ease-out forwards;
+            text-shadow: 0 0 10px rgba(179, 0, 0, 0.5);
+        }
+
+        .apollo {
+            font-family: 'GFS Didot', serif;
+            font-size: 7rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Loading Bar Section */
+        .loading-section {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            animation: fadeIn 1s ease-out 1s forwards;
+            opacity: 0;
+        }
+
+        .loading-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(26, 26, 26, 0.8);
+            border: 2px solid #b30000;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(179, 0, 0, 0.3);
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: #b30000;
+            transition: width 0.5s linear;
+        }
+
+        .loading-text {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #ccc;
+            letter-spacing: 1px;
+        }
+
+        /* Coming Soon Section (initially hidden) */
+        .coming-soon-section {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out forwards;
+            display: none;
+            opacity: 0;
+        }
+
+        .coming-soon {
+            font-family: 'GFS Didot', serif;
+            font-size: 6rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 2rem 0;
+            text-shadow: 0 0 10px rgba(179, 0, 0, 0.7);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .message {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+            animation: fadeIn 0.5s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        .subscribe {
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        .subscribe p {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #b30000;
+            border-radius: 5px;
+            background: rgba(26, 26, 26, 0.8);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .subscribe-form input::placeholder {
+            color: #888;
+        }
+
+        .subscribe-form button {
+            padding: 0 25px;
+            background: #b30000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+
+        .subscribe-form button:hover {
+            background: #990000;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(26, 26, 26, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #b30000;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #b30000;
+            animation: fadeIn 0.5s ease-out;
+            opacity: 0;
+        }
+
+        .social-icons a:nth-child(1) { animation-delay: 0.8s; }
+        .social-icons a:nth-child(2) { animation-delay: 1.0s; }
+        .social-icons a:nth-child(3) { animation-delay: 1.2s; }
+        .social-icons a:nth-child(4) { animation-delay: 1.4s; }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            background: #b30000;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(179, 0, 0, 0.7);
+        }
+
+        .footer {
+            margin-top: 3rem;
+            color: #777;
+            font-size: 0.9rem;
+            animation: fadeIn 1s ease-out 2s forwards;
+            opacity: 0;
+        }
+
+        /* Greek ornament */
+        .ornament {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ornament::before,
+        .ornament::after {
+            content: "";
+            width: 80px;
+            height: 50px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b30000' d='M12 2c-2.5 0-4.75 1.5-6 4c-1.25 2.5-1.25 5.5 0 8c1.25 2.5 3.5 4 6 4s4.75-1.5 6-4c1.25-2.5 1.25-5.5 0-8c-1.25-2.5-3.5-4-6-4m0 2c1.5 0 3 1 4 3c1 2 1 4.5 0 7c-1 2.5-2.5 3.5-4 3.5s-3-1-4-3.5c-1-2.5-1-5 0-7c1-2 2.5-3 4-3z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.7;
+        }
+
+        .ornament::after {
+            transform: scaleX(-1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-20px); display: none; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes moveBg {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .tedx { font-size: 3.5rem; }
+            .apollo { font-size: 5rem; }
+            .coming-soon { font-size: 4rem; }
+            .loading-section { max-width: 90%; }
+            .message { font-size: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .tedx { font-size: 2.8rem; }
+            .apollo { font-size: 3.8rem; }
+            .coming-soon { font-size: 3rem; }
+            .subscribe-form { flex-direction: column; }
+            .message { font-size: 1.2rem; }
+            .ornament { width: 150px; }
+        }

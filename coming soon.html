@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDx Apollo - Coming Soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&family=GFS+Didot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Greek letter background -->
+    <div id="greek-letter-bg"></div>
+    
+    <div class="container">
+        <!-- Greek ornament -->
+        <div class="ornament"></div>
+        
+        <!-- TEDx Apollo Title -->
+        <div class="header">
+            <div class="tedx">TEDx</div>
+            <div class="apollo">APOLLO</div>
+        </div>
+        
+        <!-- Loading Bar Section -->
+        <div class="loading-section">
+            <div class="loading-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="loading-text">Preparing the Oracle's Wisdom</div>
+        </div>
+        
+        <!-- Coming Soon Section (initially hidden) -->
+        <div class="coming-soon-section">
+            <div class="coming-soon">COMING SOON</div>
+            <div class="message">The Oracle of Delphi is preparing a revelation</div>
+            
+            <div class="subscribe">
+                <p>Stay updated with event announcements and exclusive content</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>TEDxApollo is an independently organized TED event</p>
+            <p>&copy; 2025 TEDxApollo. All rights reserved.</p>
+        </div>
+    </div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get DOM elements
+            const progressBar = document.querySelector('.progress');
+            const loadingSection = document.querySelector('.loading-section');
+            const comingSoonSection = document.querySelector('.coming-soon-section');
+            const socialIcons = document.querySelectorAll('.social-icons a');
+            const subscribeBtn = document.querySelector('.subscribe-form button');
+			// Create Greek letter background
+			const greekLetters = ["Α", "Β", "Γ", "Δ", "Ε", "Ζ", "Η", "Θ", "Ι", "Κ", "Λ", "Μ", "Ν", "Ξ", "Ο", "Π", "Ρ", "Σ", "Τ", "Υ", "Φ", "Χ", "Ψ", "Ω"];
+			const bgContainer = document.getElementById('greek-letter-bg');
+
+			for (let i = 0; i < 100; i++) {
+				const letter = document.createElement('div');
+				letter.className = 'greek-letter';
+				letter.textContent = greekLetters[Math.floor(Math.random() * greekLetters.length)];
+				
+				// Random position and animation
+				const left = Math.random() * 100;
+				const size = 0.5 + Math.random() * 2;
+				const duration = 15 + Math.random() * 30;
+				const delay = Math.random() * 15;
+				
+				letter.style.left = `${left}%`;
+				letter.style.fontSize = `${size}rem`;
+				letter.style.animationDuration = `${duration}s`;
+				letter.style.animationDelay = `${delay}s`;
+				
+				bgContainer.appendChild(letter);
+			}
+            
+            // Start loading animation
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 0.5;
+                progressBar.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    
+                    // Animate loading section out
+                    loadingSection.style.animation = 'fadeOut 1s ease-out forwards';
+                    
+                    // Show coming soon section after a delay
+                    setTimeout(() => {
+                        loadingSection.style.display = 'none';
+                        comingSoonSection.style.display = 'block';
+                        
+                        // Animate coming soon section in
+                        setTimeout(() => {
+                            comingSoonSection.style.animation = 'fadeIn 1s ease-out forwards';
+                            
+                            // Animate social icons in
+                            socialIcons.forEach(icon => {
+                                icon.style.animation = 'fadeIn 0.5s ease-out forwards';
+                            });
+                        }, 100);
+                    }, 1000);
+                }
+            }, 100); // 0.5% every 100ms = 20 seconds total
+            
+            // Subscribe button animation
+            subscribeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const originalText = subscribeBtn.textContent;
+                subscribeBtn.textContent = "Subscribed!";
+                subscribeBtn.style.background = "#00b33c";
+                
+                setTimeout(() => {
+                    subscribeBtn.textContent = originalText;
+                    subscribeBtn.style.background = "#b30000";
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>
