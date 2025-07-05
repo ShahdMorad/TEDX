@@ -138,12 +138,17 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
 }
 
 @media(max-width: 576px) {
+  nav{
+    max-width: 560px;
+  }
+
 #title {
-    font-size: 35px !important;
+    font-size: 30px !important;
+    margin-top: 10px;
 }
 
 .theme-title {
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .discriptions {
@@ -153,6 +158,7 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
 .discriptions2 {
     font-size: 10px;
     height: fit-content;
+    width: 400px !important;
 }
 
 .col-md-6 {
@@ -1115,8 +1121,34 @@ figure {
 .speakers-info {
     width: 1000px !important;
 }
+.text{
+  width: auto !important;
+}
 
 @media screen and (max-width: 768px) {
+    .container,
+  .row,
+  .col-md-6,
+  .text {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 10px 15px !important;
+    box-sizing: border-box;
+  }
+
+  .text {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  html {
+    overflow-x: hidden !important;
+  }
     .season-2024 {
         flex-direction: column;
         align-items: center;
