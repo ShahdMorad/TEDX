@@ -871,7 +871,7 @@ html {
 
 @media screen and (max-width: 600px) {
   .MEET_THE_TEAM {
-    margin-top: 800px;
+    margin-top: 200px;
   }
 }
 
@@ -969,7 +969,7 @@ figure {
 
 #CHAIRWOMEN {
   right: 10px;
-  top: 810px;
+  top: 760px;
   overflow: visible;
   white-space: nowrap;
   text-align: right;

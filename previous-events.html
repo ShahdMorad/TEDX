@@ -17,37 +17,40 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
     <style>
-        @media (max-width: 576px) {
-  .previous_text,
-  .text,
-  .season-2024,
-  .info-text,
-  .event-images,
-  .container,
-  .row {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 10px !important;
-    box-sizing: border-box !important;
-    overflow-x: hidden !important;
-  }
+        @media screen and (max-width: 768px) {
+            .season-2024 {
+                flex-direction: column;
+                align-items: center;
+            }
 
-  .text {
-    overflow-wrap: break-word !important;
-    word-break: break-word !important;
-  }
+            .info-text {
+                width: 90%;
+                text-align: center;
+                order: 1;
+            }
 
-  html,
-  body {
-    overflow-x: hidden !important;
-  }
+            .event-images {
+                width: 90%;
+                padding: 20px 0;
+                margin-top: 10px;
+                order: 2;
+            }
 
-  .carousel-item img {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-}
+            .event-name {
+                font-size: 28px;
+            }
+
+            .date {
+                font-size: 16px;
+            }
+
+            .speakers {
+                font-size: 18px;
+            }
+            .speakers-info{
+                width: 380px !important;
+            }
+        }
     </style>
 </head>
 <body>
