@@ -155,8 +155,8 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
     font-size: 10px;
 }
 
-.discriptions2 {
-    font-size: 10px;
+#discriptions2 {
+    font-size: 10px !important;
     height: fit-content;
     width: 400px !important;
 }
@@ -544,7 +544,7 @@ footer hr {
   opacity: .9;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .ideas-worth-spreading .text {
     width: 100% !important;
   }
@@ -660,7 +660,7 @@ footer hr {
   opacity: .9;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .what-is-tedx {
     overflow-x: hidden;
   }
@@ -694,7 +694,7 @@ footer hr {
   margin-top: -50px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .quote {
     font-size: 20px;
     position: absolute;
@@ -704,7 +704,7 @@ footer hr {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .qq {
     position: absolute;
     left: -34px;
@@ -724,7 +724,7 @@ footer hr {
   margin-top: 70px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .dq {
     font-size: 51.6px;
     position: absolute;
@@ -748,7 +748,7 @@ footer hr {
   letter-spacing: 0.3px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #HenryFord {
     font-size: 18px;
     position: absolute;
@@ -757,7 +757,7 @@ footer hr {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .TEDX_icon {
     top: 326px;
     width: 100px;
@@ -778,7 +778,7 @@ footer hr {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #About_TEDxYouthMaadiSTEM {
     left: 16px;
     top: 447px;
@@ -792,7 +792,7 @@ footer hr {
   left: 820px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #rectangle1 {
     position: absolute;
     top: 481px;
@@ -801,7 +801,7 @@ footer hr {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .dec_1 {
     position: relative;
     right: -290px;
@@ -828,7 +828,7 @@ footer hr {
   letter-spacing: 0.3px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #TEDx {
     left: 39px;
     top: 521px;
@@ -853,7 +853,7 @@ footer hr {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #About_us {
     top: 312px;
     left: 140px;
@@ -867,7 +867,7 @@ footer hr {
   margin-top: 120px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .MEET_THE_TEAM {
     margin-top: 200px;
   }
@@ -878,7 +878,7 @@ footer hr {
   height: 160px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #teamimg {
     display: block;
     margin-left: auto;
@@ -923,7 +923,7 @@ figure {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #Our_team {
     font-size: 35px;
   }
@@ -938,7 +938,7 @@ figure {
   top: 795px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #rectangle2 {
     position: absolute;
     left: 231px;
@@ -956,7 +956,7 @@ figure {
   top: 1750px;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #rectangle3 {
     position: absolute;
     left: 231px;
@@ -1038,7 +1038,7 @@ figure {
           box-shadow: 0px 0px 30px 10px rgba(225, 225, 225, 0.5);
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .high-board img {
     width: 80%;
   }
@@ -1123,7 +1123,7 @@ figure {
   width: auto !important;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .container,
   .row,
   .col-md-6,
@@ -1243,7 +1243,7 @@ figure {
   background-image: linear-gradient(to left, transparent, #000);
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .wrap {
     margin-top: 77px;
   }
@@ -1452,7 +1452,7 @@ h2.display-4 span {
   transition: .5s ease-in-out;
 }
 
-@media screen and (max-width: 1100px) {
+@media (max-width: 1100px) {
   .articles-img {
     width: 200px;
     left: 30px !important;
@@ -1463,7 +1463,7 @@ h2.display-4 span {
   }
 }
 
-@media screen and (max-width: 991px) {
+@media (max-width: 991px) {
   .articles-img {
     width: 170px;
     top: 70px;
@@ -1484,7 +1484,7 @@ h2.display-4 span {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   a#pills-home-tab, a#pills-profile-tab, a#pills-contact-tab {
     margin-right: 5px;
     font-size: 12px;
@@ -1510,7 +1510,7 @@ h2.display-4 span {
   }
 }
 
-@media screen and (max-width: 499px) {
+@media (max-width: 499px) {
   a#pills-home-tab, a#pills-profile-tab, a#pills-contact-tab {
     margin-right: 5px;
     font-size: 9px;
@@ -1522,7 +1522,7 @@ h2.display-4 span {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media (max-width: 375px) {
   a#pills-home-tab, a#pills-profile-tab, a#pills-contact-tab {
     width: 320px;
     margin-bottom: 10px;
@@ -1596,7 +1596,7 @@ h2.display-4 span {
   color: #FF2B06;
 }
 
-@media screen and (max-width: 450px) {
+@media (max-width: 450px) {
   #article-page .article2-3-animation {
     margin-left: 0;
   }
