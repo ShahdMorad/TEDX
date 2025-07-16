@@ -43,7 +43,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000000;
+    background-color: #4a0000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23780000' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,12 +56,12 @@
     <div id="scrollProgressBar"></div>
     <div id="loadingScreen">
         <div id="redStrip"></div>
-            <div id="loading-logo" class="tedx_loading" style="overflow: visible;">
-                    <div class="tedx_logo_draw_loading">
+            <div id="loading-logo" class="tedx_loading" style="overflow: visible; background-color: rgba(0, 0, 0, 0.25); height: 100%; width: 100%; align-items: center; display: flex; justify-content: center;">
+                    <div class="loading_logo">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 150 47" fill="none" stroke-width="1.5"
-                            stroke="#E62B1E">
+                            stroke="url(#grad-loading)">
                             <defs>
-                                <linearGradient id="grad-1" x1="0" y1="0" x2="100" y2="100"
+                                <linearGradient id="grad-loading" x1="0" y1="0" x2="100" y2="100"
                                     gradientUnits="userSpaceOnUse">
                                     <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
                                     <stop offset="0.8" stop-color="rgb(247, 189, 248)" />
@@ -83,9 +84,9 @@
                     <!-- الجزء المتحرك الأول -->
                     <div class="tedx_logo_draw" style="display: none;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 150 47" fill="none" stroke-width="2"
-                            stroke="url(#grad-1)">
+                            stroke="url(#grad-nav)">
                             <defs>
-                                <linearGradient id="grad-1" x1="0" y1="0" x2="100" y2="100"
+                                <linearGradient id="grad-nav" x1="0" y1="0" x2="100" y2="100"
                                     gradientUnits="userSpaceOnUse">
                                     <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
                                     <stop offset="0.8" stop-color="rgb(247, 189, 248)" />
@@ -281,7 +282,44 @@
         gsap.set(".tedx_logo_draw", { display: "none", opacity: 1 });
         gsap.set(".tedx_logo", { x: 0, opacity: 1 });
         gsap.set(".tedx_name", { display: "flex" });
-
+        gsap.set(".loading_logo", { display: "flex", opacity: 1 });
+        function hideLoadingScreen() {
+            ScrollSmoother.get().paused(false);
+            gsap.to("#loadingScreen", {
+                duration: 1.2,
+                y: "-120%",
+                ease: "power2.inOut",
+                onComplete: () => {
+                    document.getElementById("loadingScreen").style.display = "none";
+                }
+            });
+        }
+        function animateLogo() {
+            gsap.from(".loading_logo svg path", {
+                duration: 2,
+                drawSVG: "0% 0%",
+                ease: "power1.in",
+                onComplete: () => {
+                    if (document.readyState === "complete") {
+                        hideLoadingScreen();
+                        return;
+                    }
+                    gsap.to(".loading_logo svg path", {
+                        duration: 2,
+                        drawSVG: "0% 0%",
+                        ease: "power1.inOut",
+                        onComplete: () => {               
+                            if (document.readyState === "complete") {
+                                hideLoadingScreen();
+                            } else {
+                                animateLogo();
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        animateLogo();
         // 1. Start with static logo and line
         tl.set(".tedx_logo_final", { display: "flex" })
             .set(".tedx_logo_line", { display: "none", height: "30px", opacity: 1 })
@@ -329,47 +367,6 @@
         });
         ScrollSmoother.get().paused(true);
     </script>
-    <script>
-        gsap.registerPlugin(DrawSVGPlugin);
-        gsap.set(".tedx_logo_draw_loading", { display: "flex", opacity: 1 });
-        function hideLoadingScreen() {
-            ScrollSmoother.get().paused(false);
-            gsap.to("#loadingScreen", {
-                duration: 1.2,
-                y: "-120%",
-                ease: "power2.inOut",
-                onComplete: () => {
-                    document.getElementById("loadingScreen").style.display = "none";
-                }
-            });
-        }
-        function animateLogo() {
-            gsap.from(".tedx_logo_draw_loading svg path", {
-                duration: 2,
-                drawSVG: "0% 0%",
-                ease: "power1.in",
-                onComplete: () => {
-                    if (document.readyState === "complete") {
-                        hideLoadingScreen();
-                        return;
-                    }
-                    gsap.to(".tedx_logo_draw_loading svg path", {
-                        duration: 2,
-                        drawSVG: "0% 0%",
-                        ease: "power1.inOut",
-                        onComplete: () => {               
-                            if (document.readyState === "complete") {
-                                hideLoadingScreen();
-                            } else {
-                                animateLogo();
-                            }
-                        }
-                    });
-                }
-            });
-        }
-        animateLogo();
-            </script>
     <script>
         gsap.to("#scrollProgressBar", {
             width: "100%",
