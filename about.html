@@ -53,6 +53,26 @@
   }
 </style>
 <body class="aboutus" style="color: #212529 !important;">
+    <div id="scrollProgressBar"></div>
+    <div id="loadingScreen">
+        <div id="redStrip"></div>
+            <div id="loading-logo" class="tedx_loading" style="overflow: visible;">
+                    <div class="tedx_logo_draw_loading">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 150 47" fill="none" stroke-width="1.5"
+                            stroke="#E62B1E">
+                            <defs>
+                                <linearGradient id="grad-1" x1="0" y1="0" x2="100" y2="100"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
+                                    <stop offset="0.8" stop-color="rgb(247, 189, 248)" />
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M13.909 12.994h-11.909v-10.892h36.897v10.892h-11.904v31.602h-13.084v-31.602zM40.931 2.102h35.817v10.892h-22.725v5.295h22.725v10.121h-22.725v5.295h22.73v10.891h-35.822v-42.494zM78.953 2.102h21.484c14.16 0 19.168 10.475 19.168 21.185 0 13.039-6.904 21.309-21.725 21.309h-18.927v-42.494zm13.09 31.603h5.121c8.156 0 9.348-6.608 9.348-10.6 0-2.673-.836-10.111-10.301-10.111h-4.168v20.711zM138.416 28.22l-3.992-6.622-3.895 6.622h-9.594l9.107-13.39-8.77-12.809h9.596l3.555 6.332 3.654-6.332h9.594l-8.768 12.809 9.107 13.39h-9.594z" />
+                        </svg>
+                </div>
+            </div>
+    </div>
     <canvas style="background-color: rgba(44, 44, 44);"></canvas>
     <!--The begin of the body-->
     <!-- start nav bar  -->
@@ -63,7 +83,7 @@
                 <div id="navbar-logo" class="tedx" style="min-height:47px; overflow: visible;">
 
                     <!-- الجزء المتحرك الأول -->
-                    <div class="tedx_logo_draw" style="display: none;">
+                    <div class="tedx_logo_draw_navbar" style="display: none;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 150 47" fill="none" stroke-width="2"
                             stroke="url(#grad-1)">
                             <defs>
@@ -285,7 +305,7 @@
                     </div>
                     <!-- END-HR-TM -->
                     <!-- OC -->
-                    <h1 class="committee">Organizing-OC</h1>
+                    <h1 class="committee">Organizing</h1>
 
                     <div class="row justify-content-center member-row">
                         <div class="col-md-4 d-flex justify-content-center mb-4">
@@ -293,7 +313,7 @@
                                 <img src="/images/jana_abdelnasser_vice_oc.jpg" class="img-fluid">
                                 <div class="member-info">
                                     <h4 class="long-name split-text">jana abdelnasser</h4>
-                                    <p class="role split-text">Organization Vice-Head</p>
+                                    <p class="role split-text">Organizing Vice-Head</p>
                                     <span></span>
                                 </div>
                             </div>
@@ -303,7 +323,7 @@
                                 <img src="/images/youssef_ibrahim_head_oc.jpg" class="img-fluid">
                                 <div class="member-info">
                                     <h4 class="name split-text">youssef ibrahim</h4>
-                                    <p class="role split-text">Organization Head</p>
+                                    <p class="role split-text">Organizing Head</p>
                                     <span></span>
                                 </div>
                             </div>
@@ -313,7 +333,7 @@
                                 <img src="/images/mariam_magdy_vice_oc.jpg" class="img-fluid">
                                 <div class="member-info">
                                     <h4 class="name split-text">mariam magdy</h4>
-                                    <p class="role split-text">Organization Vice-Head</p>
+                                    <p class="role split-text">Organizing Vice-Head</p>
                                     <span></span>
                                 </div>
                             </div>
@@ -621,14 +641,14 @@
 
         gsap.set(".tedx_logo_final", { display: "flex" });
         gsap.set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 });
-        gsap.set(".tedx_logo_draw", { display: "none", opacity: 1 });
+        gsap.set(".tedx_logo_draw_navbar", { display: "none", opacity: 1 });
         gsap.set(".tedx_logo", { x: 0, opacity: 1 });
         gsap.set(".tedx_name", { display: "flex" });
 
         // 1. Start with static logo and line
         tl.set(".tedx_logo_final", { display: "flex" })
             .set(".tedx_logo_line", { display: "none", height: "30px", opacity: 1 })
-            .set(".tedx_logo_draw", { opacity: 1, display: "none" })
+            .set(".tedx_logo_draw_navbar", { opacity: 1, display: "none" })
             .set(".tedx_name", { display: "flex" })
             // 3. Slide in the TEDx text only from behind the line (not Maadi STEM Youth)
             .set(".tedx_logo_final", { display: "flex" })
@@ -647,13 +667,13 @@
             .to(".tedx_logo_line", { duration: 0.4, height: 0, ease: "power1.in" }, "<")
             .set(".tedx_logo_final", { display: "none" })
             .set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 })
-            .set(".tedx_logo_draw", { display: "flex" })
+            .set(".tedx_logo_draw_navbar", { display: "flex" })
             // 7. Show and animate SVG draw
-            .from(".tedx_logo_draw svg path", { duration: 2.5, drawSVG: "0% 0%" })
+            .from(".tedx_logo_draw_navbar svg path", { duration: 2.5, drawSVG: "0% 0%" })
             .to({}, { duration: 7 })
-            .to(".tedx_logo_draw svg path", { duration: 1, drawSVG: "100% 100%" })
+            .to(".tedx_logo_draw_navbar svg path", { duration: 1, drawSVG: "100% 100%" })
             // 8. Wait, then reset
-            .set(".tedx_logo_draw", { display: "none" })
+            .set(".tedx_logo_draw_navbar", { display: "none" })
             .set(".tedx_logo_final", { display: "flex" })
             .to(".tedx_logo_line", { display: "block", duration: 0.4, height: "30px" }, ">")
             .to(".tedx_logo", { duration: 0.8, x: 0, opacity: 1 }, ">")
@@ -670,6 +690,7 @@
             smooth: 1.5,
             effects: true
         });
+        ScrollSmoother.get().paused(true);
     </script>
     <script>
         gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -709,6 +730,59 @@
         ScrollTrigger.addEventListener("refresh", setupSplits);
         setupSplits();
     </script>
+    <script>
+        gsap.registerPlugin(DrawSVGPlugin);
+        gsap.set(".tedx_logo_draw_loading", { display: "flex", opacity: 1 });
+        function hideLoadingScreen() {
+            ScrollSmoother.get().paused(false);
+            gsap.to("#loadingScreen", {
+                duration: 1.2,
+                y: "-120%",
+                ease: "power2.inOut",
+                onComplete: () => {
+                    document.getElementById("loadingScreen").style.display = "none";
+                }
+            });
+        }
+        function animateLogo() {
+            gsap.from(".tedx_logo_draw_loading svg path", {
+                duration: 2,
+                drawSVG: "0% 0%",
+                ease: "power1.in",
+                onComplete: () => {
+                    if (document.readyState === "complete") {
+                        hideLoadingScreen();
+                        return;
+                    }
+                    gsap.to(".tedx_logo_draw_loading svg path", {
+                        duration: 2,
+                        drawSVG: "0% 0%",
+                        ease: "power1.inOut",
+                        onComplete: () => {               
+                            if (document.readyState === "complete") {
+                                hideLoadingScreen();
+                            } else {
+                                animateLogo();
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        animateLogo();
+            </script>
+    <script>
+        gsap.to("#scrollProgressBar", {
+            width: "100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#smooth-content",
+                start:() => "top top",
+                end: () => "7953",
+                scrub: true
+            }
+        });
+</script>
 </body>
 
 </html>

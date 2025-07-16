@@ -1411,6 +1411,10 @@ window.addEventListener('mousemove', e => {
     const rect = canvas.getBoundingClientRect();
     let posX = scaleByPixelRatio(e.clientX - rect.left);
     let posY = scaleByPixelRatio(e.clientY - rect.top);
+    if (!pointer.initialized) {
+        updatePointerDownData(pointer, -1, posX, posY);
+        pointer.initialized = true;
+    }
     updatePointerMoveData(pointer, posX, posY);
     pointer.moved = true;
 });
@@ -1453,12 +1457,6 @@ window.addEventListener('touchend', e => {
     }
 });
 
-window.addEventListener('keydown', e => {
-    if (e.code === 'KeyP')
-        config.PAUSED = !config.PAUSED;
-    if (e.key === ' ')
-        splatStack.push(parseInt(Math.random() * 20) + 5);
-});
 
 function updatePointerDownData (pointer, id, posX, posY) {
     pointer.id = id;

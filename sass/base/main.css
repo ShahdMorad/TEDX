@@ -442,9 +442,7 @@ footer hr {
   font-size: 13px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 /* ///////// 2025 ///////// */
 .ideas-worth-spreading {
@@ -969,7 +967,7 @@ figure {
 
 #CHAIRWOMEN {
   right: 10px;
-  top: 760px;
+  top: 810px;
   overflow: visible;
   white-space: nowrap;
   text-align: right;
@@ -1821,7 +1819,7 @@ input:focus {
   gap: 1rem; /* مسافة بينهم لو حبيت */
 }
 
-.tedx_logo_draw {
+.tedx_logo_draw_navbar {
   display: flex;
   align-items: center;
   gap: 0.05em;
@@ -1829,7 +1827,7 @@ input:focus {
   margin-bottom: 1.5px;
 }
 
-.tedx_logo_draw svg {
+.tedx_logo_draw_navbar svg {
   width: 2.455em; /* يعادل تقريبًا نفس حجم الخلفية */
   height: -100px;
   display: block;
@@ -1910,4 +1908,72 @@ input:focus {
 .tedx_info_x_footer {
 
     color: #e62b1e
+}
+
+#loadingScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    z-index: 9999;
+}
+
+.tedx_loading {
+    line-height: 1.25;
+}
+.tedx_logo_draw_loading {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.tedx_logo_draw_loading svg {
+  width: 8.455em;
+  height: center;
+  display: block;
+}
+#redStrip {
+    width: 100%;
+    height: 50px;
+    background-color: #a71f15;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+}
+#scrollProgressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background-color: red;
+    z-index: 8888;
+}
+/* إخفاء السكروول بار في كروم وسفاري داخل العنصر الفعلي */
+#smooth-wrapper::-webkit-scrollbar,
+#smooth-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* إخفاء السكروول بار في فايرفوكس داخل العنصر الفعلي */
+#smooth-wrapper,
+#smooth-content {
+    scrollbar-width: none;
+}
+/* إخفاء السكروول بار في كروم وسفاري */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* إخفاء السكروول بار في فايرفوكس */
+html,
+body {
+    scrollbar-width: none;
 }
