@@ -162,15 +162,15 @@
                             </div>
 
                             <div class="hero-section-btn">
-                                <button onclick="location.href='coming soon.html'">Get your Tickets</button>
-                                <button onclick="location.href='coming soon.html'" id="btn-2">Discover our Event</button>
+                                <button onclick="location.href='coming-soon.html'">Get your Tickets</button>
+                                <button onclick="location.href='coming-soon.html'" id="btn-2">Discover our Event</button>
                             </div>
 
                         </div>
                         <div class="col-md-6 text-center" id="image1">
                             <div class="image-wrapper">
-                                <img src="./images/sun.png" id="sun" class="img-fluid" alt="ID07" width="90%"
-                                    height="85%">
+                                <img src="./images/sun.png" id="sun" class="img-fluid" alt="ID07" width="80%"
+                                    height="75%">
                             </div>
                         </div>
                     </div>
@@ -274,9 +274,6 @@
     <script>
         // Ensure DrawSVGPlugin is registered
         gsap.registerPlugin(DrawSVGPlugin);
-
-        const tl = gsap.timeline({ repeat: -1, defaults: { duration: 5, ease: "power1.inOut" } });
-
         gsap.set(".tedx_logo_final", { display: "flex" });
         gsap.set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 });
         gsap.set(".tedx_logo_draw", { display: "none", opacity: 1 });
@@ -284,7 +281,6 @@
         gsap.set(".tedx_name", { display: "flex" });
         gsap.set(".loading_logo", { display: "flex", opacity: 1 });
         function hideLoadingScreen() {
-            ScrollSmoother.get().paused(false);
             gsap.to("#loadingScreen", {
                 duration: 1.2,
                 y: "-120%",
@@ -320,6 +316,19 @@
             });
         }
         animateLogo();
+    </script>
+    <script>
+        // Ensure DrawSVGPlugin is registered
+        gsap.registerPlugin(DrawSVGPlugin);
+
+        const tl = gsap.timeline({ repeat: -1, defaults: { duration: 5, ease: "power1.inOut" } });
+
+        gsap.set(".tedx_logo_final", { display: "flex" });
+        gsap.set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 });
+        gsap.set(".tedx_logo_draw", { display: "none", opacity: 1 });
+        gsap.set(".tedx_logo", { x: 0, opacity: 1 });
+        gsap.set(".tedx_name", { display: "flex" });
+
         // 1. Start with static logo and line
         tl.set(".tedx_logo_final", { display: "flex" })
             .set(".tedx_logo_line", { display: "none", height: "30px", opacity: 1 })
@@ -365,7 +374,6 @@
             smooth: 1.5,
             effects: true
         });
-        ScrollSmoother.get().paused(true);
     </script>
     <script>
         gsap.to("#scrollProgressBar", {

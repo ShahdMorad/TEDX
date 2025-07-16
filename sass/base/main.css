@@ -1819,7 +1819,7 @@ input:focus {
   gap: 1rem; /* مسافة بينهم لو حبيت */
 }
 
-.tedx_logo_draw_navbar {
+.tedx_logo_draw {
   display: flex;
   align-items: center;
   gap: 0.05em;
@@ -1827,7 +1827,7 @@ input:focus {
   margin-bottom: 1.5px;
 }
 
-.tedx_logo_draw_navbar svg {
+.tedx_logo_draw svg {
   width: 2.455em; /* يعادل تقريبًا نفس حجم الخلفية */
   height: -100px;
   display: block;

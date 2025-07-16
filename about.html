@@ -95,13 +95,12 @@
         <div class="container">
             <a class="navbar-brand text-uppercase" href="index.html" style="text-decoration: none; overflow: visible;">
                 <div id="navbar-logo" class="tedx" style="min-height:47px; overflow: visible;">
-
                     <!-- الجزء المتحرك الأول -->
-                    <div class="tedx_logo_draw_navbar" style="display: none;">
+                    <div class="tedx_logo_draw" style="display: none;">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 150 47" fill="none" stroke-width="2"
-                            stroke="url(#grad-1)">
+                            stroke="url(#grad-nav)">
                             <defs>
-                                <linearGradient id="grad-1" x1="0" y1="0" x2="100" y2="100"
+                                <linearGradient id="grad-nav" x1="0" y1="0" x2="100" y2="100"
                                     gradientUnits="userSpaceOnUse">
                                     <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
                                     <stop offset="0.8" stop-color="rgb(247, 189, 248)" />
@@ -127,19 +126,16 @@
                         <span class="tedx_info_x">x</span>
                         <span class="tedx_info_text"> = independently organized TED event</span>
                     </div>
-
                 </div>
             </a>
-
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse_navbar_collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">home</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="coming-soon.html">2025 Event</a>
@@ -147,8 +143,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="previous-events.html">previous events</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="about.html">about us <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about us</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact us</a>
@@ -704,7 +700,6 @@
             smooth: 1.5,
             effects: true
         });
-        ScrollSmoother.get().paused(true);
     </script>
     <script>
         gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -748,7 +743,6 @@
         gsap.registerPlugin(DrawSVGPlugin);
         gsap.set(".loading_logo", { display: "flex", opacity: 1 });
         function hideLoadingScreen() {
-            ScrollSmoother.get().paused(false);
             gsap.to("#loadingScreen", {
                 duration: 1.2,
                 y: "-120%",
