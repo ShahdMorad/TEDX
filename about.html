@@ -134,8 +134,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="coming-soon.html">2025 Event</a>
@@ -143,8 +143,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="previous-events.html">previous events</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">about us</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="about.html">about us <span class="sr-only">(current)</span></a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact us</a>
@@ -646,19 +646,65 @@
     <script>
         // Ensure DrawSVGPlugin is registered
         gsap.registerPlugin(DrawSVGPlugin);
+        gsap.set(".tedx_logo_final", { display: "flex" });
+        gsap.set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 });
+        gsap.set(".tedx_logo_draw", { display: "none", opacity: 1 });
+        gsap.set(".tedx_logo", { x: 0, opacity: 1 });
+        gsap.set(".tedx_name", { display: "flex" });
+        gsap.set(".loading_logo", { display: "flex", opacity: 1 });
+        function hideLoadingScreen() {
+            gsap.to("#loadingScreen", {
+                duration: 1.2,
+                y: "-120%",
+                ease: "power2.inOut",
+                onComplete: () => {
+                    document.getElementById("loadingScreen").style.display = "none";
+                }
+            });
+        }
+        function animateLogo() {
+            gsap.from(".loading_logo svg path", {
+                duration: 2,
+                drawSVG: "0% 0%",
+                ease: "power1.in",
+                onComplete: () => {
+                    if (document.readyState === "complete") {
+                        hideLoadingScreen();
+                        return;
+                    }
+                    gsap.to(".loading_logo svg path", {
+                        duration: 2,
+                        drawSVG: "0% 0%",
+                        ease: "power1.inOut",
+                        onComplete: () => {               
+                            if (document.readyState === "complete") {
+                                hideLoadingScreen();
+                            } else {
+                                animateLogo();
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        animateLogo();
+    </script>
+    <script>
+        // Ensure DrawSVGPlugin is registered
+        gsap.registerPlugin(DrawSVGPlugin);
 
         const tl = gsap.timeline({ repeat: -1, defaults: { duration: 5, ease: "power1.inOut" } });
 
         gsap.set(".tedx_logo_final", { display: "flex" });
         gsap.set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 });
-        gsap.set(".tedx_logo_draw_navbar", { display: "none", opacity: 1 });
+        gsap.set(".tedx_logo_draw", { display: "none", opacity: 1 });
         gsap.set(".tedx_logo", { x: 0, opacity: 1 });
         gsap.set(".tedx_name", { display: "flex" });
 
         // 1. Start with static logo and line
         tl.set(".tedx_logo_final", { display: "flex" })
             .set(".tedx_logo_line", { display: "none", height: "30px", opacity: 1 })
-            .set(".tedx_logo_draw_navbar", { opacity: 1, display: "none" })
+            .set(".tedx_logo_draw", { opacity: 1, display: "none" })
             .set(".tedx_name", { display: "flex" })
             // 3. Slide in the TEDx text only from behind the line (not Maadi STEM Youth)
             .set(".tedx_logo_final", { display: "flex" })
@@ -677,13 +723,13 @@
             .to(".tedx_logo_line", { duration: 0.4, height: 0, ease: "power1.in" }, "<")
             .set(".tedx_logo_final", { display: "none" })
             .set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 })
-            .set(".tedx_logo_draw_navbar", { display: "flex" })
+            .set(".tedx_logo_draw", { display: "flex" })
             // 7. Show and animate SVG draw
-            .from(".tedx_logo_draw_navbar svg path", { duration: 2.5, drawSVG: "0% 0%" })
+            .from(".tedx_logo_draw svg path", { duration: 2.5, drawSVG: "0% 0%" })
             .to({}, { duration: 7 })
-            .to(".tedx_logo_draw_navbar svg path", { duration: 1, drawSVG: "100% 100%" })
+            .to(".tedx_logo_draw svg path", { duration: 1, drawSVG: "100% 100%" })
             // 8. Wait, then reset
-            .set(".tedx_logo_draw_navbar", { display: "none" })
+            .set(".tedx_logo_draw", { display: "none" })
             .set(".tedx_logo_final", { display: "flex" })
             .to(".tedx_logo_line", { display: "block", duration: 0.4, height: "30px" }, ">")
             .to(".tedx_logo", { duration: 0.8, x: 0, opacity: 1 }, ">")
@@ -739,46 +785,6 @@
         ScrollTrigger.addEventListener("refresh", setupSplits);
         setupSplits();
     </script>
-    <script>
-        gsap.registerPlugin(DrawSVGPlugin);
-        gsap.set(".loading_logo", { display: "flex", opacity: 1 });
-        function hideLoadingScreen() {
-            gsap.to("#loadingScreen", {
-                duration: 1.2,
-                y: "-120%",
-                ease: "power2.inOut",
-                onComplete: () => {
-                    document.getElementById("loadingScreen").style.display = "none";
-                }
-            });
-        }
-        function animateLogo() {
-            gsap.from(".loading_logo svg path", {
-                duration: 2,
-                drawSVG: "0% 0%",
-                ease: "power1.in",
-                onComplete: () => {
-                    if (document.readyState === "complete") {
-                        hideLoadingScreen();
-                        return;
-                    }
-                    gsap.to(".loading_logo svg path", {
-                        duration: 2,
-                        drawSVG: "0% 0%",
-                        ease: "power1.inOut",
-                        onComplete: () => {               
-                            if (document.readyState === "complete") {
-                                hideLoadingScreen();
-                            } else {
-                                animateLogo();
-                            }
-                        }
-                    });
-                }
-            });
-        }
-        animateLogo();
-            </script>
     <script>
         gsap.to("#scrollProgressBar", {
             width: "100%",
