@@ -143,7 +143,7 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
   }
 
 #title {
-    font-size: 30px !important;
+    font-size: 28px !important;
     margin-top: 10px;
 }
 
@@ -153,12 +153,13 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
 
 .discriptions {
     font-size: 10px;
+  
 }
 
 #discriptions2 {
     font-size: 10px !important;
     height: fit-content;
-    width: 400px !important;
+    width: 300px !important;
 }
 
 .col-md-6 {
