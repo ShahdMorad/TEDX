@@ -281,6 +281,7 @@
         gsap.set(".tedx_name", { display: "flex" });
         gsap.set(".loading_logo", { display: "flex", opacity: 1 });
         function hideLoadingScreen() {
+            ScrollSmoother.get().paused(false);
             gsap.to("#loadingScreen", {
                 duration: 1.2,
                 y: "-120%",
@@ -374,6 +375,7 @@
             smooth: 1.5,
             effects: true
         });
+        ScrollSmoother.get().paused(true);
     </script>
     <script>
         gsap.to("#scrollProgressBar", {
