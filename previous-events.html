@@ -475,6 +475,7 @@
         gsap.registerPlugin(DrawSVGPlugin);
         gsap.set(".loading_logo", { display: "flex", opacity: 1 });
         function hideLoadingScreen() {
+            ScrollSmoother.get().paused(false);
             gsap.to("#loadingScreen", {
                 duration: 1.2,
                 y: "-120%",
