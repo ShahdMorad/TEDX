@@ -155,6 +155,9 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
     font-size: 10px;
   
 }
+.image-wrapper{
+  margin-top: 40px;
+}
 
 #discriptions2 {
     font-size: 10px !important;
@@ -195,7 +198,7 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
 }
 
 .what-is-tedx {
-    padding-top: 10px;
+    padding-top: 1px;
 }
 
 #bottom-text {
@@ -1087,6 +1090,17 @@ figure {
     flex-direction: row;
     gap: 30px;
     margin: 30px;
+    border: solid 3px #E62B1E;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #312b2b79;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 14px 0 #E62B1E;
+
+  }
+.season-2024:hover{
+    transform:  scale(1.06) !important;
+
 }
 
 .info-text {
@@ -1151,12 +1165,14 @@ figure {
     .season-2024 {
         flex-direction: column;
         align-items: center;
+        padding: 10px;
     }
 
     .info-text {
         width: 90%;
         text-align: center;
         order: 1;
+        max-width: 330px;
     }
 
     .event-images {
@@ -1164,6 +1180,8 @@ figure {
         padding: 20px 0;
         margin-top: 10px;
         order: 2;
+        max-width: 300px;
+        height: auto !important;
     }
 
     .event-name {
@@ -1178,7 +1196,7 @@ figure {
         font-size: 18px;
     }
     .speakers-info{
-        width: 380px !important;
+        max-width: 300px !important;
     }
 }
 
