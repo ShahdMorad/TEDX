@@ -1096,7 +1096,8 @@ figure {
     background-color: #312b2b79;
     transition: transform 0.3s ease;
     box-shadow: 0 5px 14px 0 #E62B1E;
-
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 .season-2024:hover{
     transform:  scale(1.06) !important;
