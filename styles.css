@@ -530,7 +530,7 @@
         /* Responsive design */
         @media (max-width: 768px) {
             .tedx1 { font-size: 3.5rem; }
-            .apollo { font-size: 5rem; }
+            .apollo { font-size: 4rem; }
             .coming-soon { font-size: 4rem; }
             .loading-section { max-width: 90%; }
             .message { font-size: 1.5rem; }
@@ -538,7 +538,7 @@
 
         @media (max-width: 480px) {
             .ted1x { font-size: 2.8rem; }
-            .apollo { font-size: 3.8rem; }
+            .apollo { font-size: 3rem; }
             .coming-soon { font-size: 3rem; }
             .subscribe-form { flex-direction: column; }
             .message { font-size: 1.2rem; }
