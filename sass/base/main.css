@@ -111,6 +111,7 @@ padding: 40px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: 800;
 font-size: 53px;
+margin-bottom: 20px;
 }
 
 .theme-title {
@@ -148,21 +149,15 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
 }
 
 .theme-title {
-    font-size: 26px;
+    font-size: 22px;
 }
 
 .discriptions {
     font-size: 10px;
-  
+    max-width: auto !important;
 }
 .image-wrapper{
   margin-top: 40px;
-}
-
-#discriptions2 {
-    font-size: 10px !important;
-    height: fit-content;
-    width: 300px !important;
 }
 
 .col-md-6 {
@@ -219,11 +214,6 @@ footer {
 .discriptions {
     font-size: 20px !important;
     width: 370px;
-}
-
-.discriptions2 {
-    font-size: 10px;
-    width: 640px !important;
 }
 
 .col-md-6 {
