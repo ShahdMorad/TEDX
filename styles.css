@@ -6,6 +6,8 @@
 
         .navbar-container {
             width: 100%;
+	    background: rgba(0,0,0,0.5) !important; /* شفاف سيكا */
+            backdrop-filter: blur(12px);            /* بلور */
         }
 
         .nav-link {
@@ -13,7 +15,6 @@
         }
 
         .navbar {
-        background: blur(12px);
         -webkit-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
         position: fixed !important;
