@@ -27,6 +27,7 @@
             background: rgba(0,0,0,0.5) !important; /* شفاف سيكا */
             backdrop-filter: blur(12px);            /* بلور */
             -webkit-backdrop-filter: blur(12px);    /* دعم سفاري */
+            overflow: auto;
         }
         .nav-link {
             color: #eee !important;
@@ -37,6 +38,7 @@
             background: rgba(0,0,0,0.5) !important; /* شفاف سيكا */
             backdrop-filter: blur(12px);            /* بلور */
             -webkit-backdrop-filter: blur(12px);    /* دعم سفاري */
+	    overflow: auto;
         }
 
         .scrolled .nav-link {
@@ -530,7 +532,7 @@
         /* Responsive design */
         @media (max-width: 768px) {
             .tedx1 { font-size: 3.5rem; }
-            .apollo { font-size: 4rem; }
+            .apollo { font-size: 3rem; }
             .coming-soon { font-size: 4rem; }
             .loading-section { max-width: 90%; }
             .message { font-size: 1.5rem; }
@@ -538,7 +540,7 @@
 
         @media (max-width: 480px) {
             .ted1x { font-size: 2.8rem; }
-            .apollo { font-size: 3rem; }
+            .apollo { font-size: 2rem; }
             .coming-soon { font-size: 3rem; }
             .subscribe-form { flex-direction: column; }
             .message { font-size: 1.2rem; }
@@ -553,12 +555,14 @@
 @media (min-width: 992px) {
     .navbar-container {
         max-width: 960px;
+	overflow: auto;
     }
 }
 
 @media (min-width: 1200px) {
     .navbar-container {
         max-width: 1140px;
+	overflow: auto;
     }
 }
 
