@@ -1,4 +1,7 @@
-        /* NavBar */
+* {
+	overflow: auto;
+}	
+/* NavBar */
         nav {
         font-family: sans-serif !important;
 	position: fixed !important;
