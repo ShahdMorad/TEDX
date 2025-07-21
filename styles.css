@@ -1,6 +1,7 @@
         /* NavBar */
         nav {
         font-family: sans-serif !important;
+	position: fixed !important;
         }
 
         .navbar-container {
