@@ -350,6 +350,14 @@
             animation: fadeIn 1s ease-out 0.5s forwards;
             opacity: 0;
         }
+        @media (max-width: 600px){
+            .apollo{
+                font-size:60px !important ;
+            }
+            .header{
+                margin-top: 50px;
+            }
+        }
 
         /* Loading Bar Section */
         .loading-section {
