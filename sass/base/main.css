@@ -92,7 +92,7 @@ color: white;
 text-decoration: none;
 }
 
-#title {
+.title {
 font-size: 53px;
 font-family: 'Segoe UI';
 font-weight: 800;
@@ -143,9 +143,8 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
     max-width: 560px;
   }
 
-#title {
-    font-size: 28px !important;
-    margin-top: 10px;
+.title {
+    margin-top: 20px;
 }
 
 .theme-title {
@@ -172,11 +171,13 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
 }
 
 .hero-section-btn {
-    margin-left: 5px;
+    margin-left: auto !important;
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     gap: 10px;
+    width: auto;
+    
 }
 
 #title2 {
@@ -193,7 +194,7 @@ background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), tr
 }
 
 .what-is-tedx {
-    padding-top: 1px;
+    padding-top: 0px !important;
 }
 
 #bottom-text {
@@ -206,7 +207,7 @@ footer {
 }
 
 @media(max-width: 770px) {
-#title {
+.title {
     font-size: 50px !important;
     width: 400px !important;
 }
