@@ -1130,7 +1130,7 @@ figure {
   width: auto !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     .container,
   .row,
   .col-md-6,
@@ -1190,6 +1190,15 @@ figure {
     .speakers-info{
         max-width: 300px !important;
     }
+}
+@media (max-width: 768px) and (max-width: 1024){
+  .season-2024{
+    margin: 50px;
+  }
+  .speakers-info{
+    width: 100% !important;
+  }
+
 }
 
 
