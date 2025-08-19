@@ -1,0 +1,548 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    font-family: 'GFS Neohellenic', sans-serif;
+}
+
+/* Home Button */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(179, 0, 0, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.7);
+}
+
+.home-button:hover {
+    background: rgba(179, 0, 0, 1);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(179, 0, 0, 0.9);
+}
+
+/* Greek Background */
+#greek-letter-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.greek-letter {
+    position: absolute;
+    font-family: 'GFS Didot', serif;
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0;
+    animation: floatLetter 15s linear infinite;
+}
+
+/* Greek Columns */
+.greek-column {
+    position: absolute;
+    width: 60px;
+    height: 300px;
+    background: linear-gradient(to bottom, #1a1a1a, #000);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.greek-column::before,
+.greek-column::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #b30000;
+}
+
+.greek-column::before {
+    top: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.greek-column::after {
+    bottom: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+.column-1 {
+    top: 20%;
+    left: 10%;
+    animation: floatColumn 20s infinite ease-in-out;
+}
+
+.column-2 {
+    top: 40%;
+    right: 15%;
+    animation: floatColumn 25s infinite ease-in-out reverse;
+}
+
+.column-3 {
+    bottom: 20%;
+    left: 20%;
+    animation: floatColumn 22s infinite ease-in-out;
+}
+
+/* TEDx Header */
+.header {
+    text-align: center;
+    padding: 40px 0 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    width: 250px;
+    height: auto;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 15px rgba(179, 0, 0, 0.8));
+}
+
+.title {
+    font-size: 4rem;
+    margin: 20px 0;
+    background: linear-gradient(to right, #b30000, #ff5252);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 20px rgba(179, 0, 0, 0.5);
+    font-family: 'GFS Didot', serif;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 5px;
+    background: #b30000;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.7);
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: #ccc;
+    max-width: 700px;
+    margin: 20px auto 0;
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Registration Form */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.form-container {
+    background: rgba(20, 20, 30, 0.8);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 0 40px rgba(179, 0, 0, 0.4);
+    border: 1px solid rgba(179, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(179, 0, 0, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    animation: rotate 25s linear infinite;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #b30000;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    position: relative;
+    text-shadow: 0 0 15px rgba(179, 0, 0, 0.5);
+    font-family: 'GFS Didot', serif;
+}
+
+.form-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #b30000;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.7);
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    color: #ddd;
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+}
+
+.required::after {
+    content: ' *';
+    color: #b30000;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background: rgba(30, 30, 40, 0.9);
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'GFS Neohellenic', sans-serif;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #b30000;
+    box-shadow: 0 0 25px rgba(179, 0, 0, 0.7);
+    background: rgba(40, 40, 50, 0.9);
+    transform: translateY(-3px);
+}
+
+/* Add these styles to your existing CSS */
+.payment-instructions {
+    background: rgba(179, 0, 0, 0.1);
+    border-left: 4px solid #b30000;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.payment-instructions h3 {
+    color: #b30000;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-family: 'GFS Didot', serif;
+}
+
+.payment-instructions p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.payment-instructions ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.payment-instructions li {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.payment-instructions strong {
+    color: #b30000;
+    font-weight: 700;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #b30000 0%, #8b0000 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(179, 0, 0, 0.5);
+    font-family: 'GFS Didot', serif;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(179, 0, 0, 0.6);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.error {
+    color: #ff5252;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    display: none;
+    font-weight: 500;
+}
+
+/* Greek Decorations */
+.greek-text {
+    position: absolute;
+    font-size: 10rem;
+    font-weight: 900;
+    color: rgba(179, 0, 0, 0.03);
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    font-family: 'GFS Didot', serif;
+}
+
+.text-1 {
+    top: 10%;
+    left: 5%;
+    transform: rotate(-25deg);
+}
+
+.text-2 {
+    top: 30%;
+    right: 5%;
+    transform: rotate(15deg);
+}
+
+.text-3 {
+    bottom: 20%;
+    left: 10%;
+    transform: rotate(-10deg);
+}
+
+.text-4 {
+    bottom: 40%;
+    right: 15%;
+    transform: rotate(25deg);
+}
+
+/* Success Animation */
+.success-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.laurel-wreath {
+    width: 200px;
+    height: 200px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50,15 C60,15 70,20 75,30 C80,40 78,50 70,60 C62,70 50,75 40,70 C30,65 25,55 25,45 C25,35 30,25 40,20 C45,17.5 47.5,15 50,15 Z' fill='none' stroke='%23b30000' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: growWreath 1.5s ease-out forwards;
+}
+
+.success-text {
+    font-size: 3rem;
+    color: #b30000;
+    margin-top: 30px;
+    font-family: 'GFS Didot', serif;
+    text-shadow: 0 0 15px rgba(179, 0, 0, 0.7);
+    opacity: 0;
+    animation: fadeInText 1s ease-out 0.5s forwards;
+}
+
+/* Animations */
+@keyframes floatLetter {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.1;
+    }
+    95% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateY(-20vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes floatColumn {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, 20px) rotate(2deg); }
+    50% { transform: translate(-20px, -20px) rotate(-2deg); }
+    75% { transform: translate(20px, -20px) rotate(2deg); }
+}
+
+@keyframes growWreath {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        max-width: 90%;
+        padding: 30px;
+    }
+    
+    .form-container {
+        padding: 40px;
+    }
+    
+    .title {
+        font-size: 3rem;
+    }
+    
+    .form-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .form-container {
+        padding: 30px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .form-title {
+        font-size: 1.8rem;
+    }
+    
+    input, select, .submit-btn {
+        padding: 16px;
+        font-size: 1.1rem;
+    }
+    
+    .greek-text {
+        font-size: 7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 30px 0;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .form-container {
+        padding: 25px 20px;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+    
+    input, select, .submit-btn {
+        padding: 14px;
+    }
+    
+    .greek-text {
+        font-size: 5rem;
+    }
+    
+    .laurel-wreath {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .success-text {
+        font-size: 2rem;
+    }
+}
