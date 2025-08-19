@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDx Apollo - Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=GFS+Neohellenic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Greek Background -->
+    <div id="greek-letter-bg"></div>
+    
+    
+    <!-- Greek Decorations -->
+    <div class="greek-text text-1">ΑΠΟΛΛΩΝ</div>
+    <div class="greek-text text-2">ΙΔΕΕΣ</div>
+    <div class="greek-text text-3">ΑΞΙΑ</div>
+    <div class="greek-text text-4">ΔΗΜΙΟΥΡΓΙΑ</div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg">
+                <text x="50%" y="50%" text-anchor="middle" fill="#b30000" font-size="90" font-weight="900" font-family="GFS Neohellenic">TEDx</text>
+            </svg>
+        </div>
+        <h1 class="title">Apollo</h1>
+        <p class="subtitle">Join us for a journey through ideas inspired by Greek wisdom and innovation</p>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Event Registration</h2>
+            
+            <form id="registrationForm" method="post" name="signForm" action="register_handler.php">
+                <div class="form-group">
+                    <label for="name" class="required">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name">
+                    <div class="error" id="nameError">Please enter your name</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="required">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <div class="error" id="emailError">Please enter a valid email address</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="required">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    <div class="error" id="phoneError">Please enter a valid phone number</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="faculty" class="required">Faculty/School</label>
+                    <input type="text" id="faculty" name="school" placeholder="Enter your faculty or school">
+                    <div class="error" id="facultyError">Please enter your faculty/school</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="grade" class="required">Grade/Year</label>
+                    <input type="text" id="grade" name="grade" placeholder="Enter your grade/year">
+                    <div class="error" id="gradeError">Please enter your grade/year</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="transaction" class="required">Transaction Number</label>
+                    <input type="text" id="transaction" name="transaction" placeholder="Enter payment transaction number">
+                    <div class="error" id="transactionError">Please enter your transaction number</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="promo">Promo Code (Optional)</label>
+                    <input type="text" id="promo" name="promo" placeholder="Enter promo code if you have one">
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <i class="fas fa-laurel-crown"></i> Complete Registration
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Greek Success Animation -->
+    <div class="success-animation" id="successAnimation">
+        <div class="laurel-wreath"></div>
+        <div class="success-text">Registration Complete!</div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+<script src="../firebase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

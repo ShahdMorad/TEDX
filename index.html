@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6H04XGQ06D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-6H04XGQ06D');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | TEDx Maadi STEM Youth</title>
+    <link rel="canonical" href="index.html" />
+    <link rel="icon" href="images/icon.png" />
+    <link rel="stylesheet" href="sass/base/main.css">
+    <link rel="stylesheet" href="releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="sass/base/normalize.css">
+    <link rel="stylesheet" href="sass/layout/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .bottom-text-box {
+            padding: 40px;
+        }
+
+        #middle-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .row{
+            padding: 80px;
+            padding-top: 0;
+        }
+
+        @media(max-width: 576px) {
+            #middle-layer {
+                height: 200vh;
+            }
+
+            .bottom-text-box {
+                display: flex;
+                flex-direction: column;
+                max-width: auto !important;
+                padding: 0px;
+            }
+            .title{
+                font-size: 39px !important;
+            }
+            .row{
+                gap: 30px;
+            }
+            .hero-section-btn{
+                display: flex;
+                flex-direction: column;
+            }
+            .hero-section-btn button{
+                width: 260px;
+            }
+        }
+    </style>
+</head>
+<style>
+    ::selection {
+        background: #a71f15;
+        color: white;
+    }
+    #loadingScreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #4a0000;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23780000' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        z-index: 9999;
+    }
+</style>
+
+<body>
+    <div id="scrollProgressBar"></div>
+    <div id="loadingScreen">
+        <div id="redStrip"></div>
+        <div id="loading-logo" class="tedx_loading"
+            style="overflow: visible; background-color: rgba(0, 0, 0, 0.25); height: 100%; width: 100%; align-items: center; display: flex; justify-content: center;">
+            <div class="loading_logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 150 47" fill="none" stroke-width="1.5"
+                    stroke="url(#grad-loading)">
+                    <defs>
+                        <linearGradient id="grad-loading" x1="0" y1="0" x2="100" y2="100"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
+                            <stop offset="0.8" stop-color="rgb(247, 189, 248)" />
+                        </linearGradient>
+                    </defs>
+                    <path
+                        d="M13.909 12.994h-11.909v-10.892h36.897v10.892h-11.904v31.602h-13.084v-31.602zM40.931 2.102h35.817v10.892h-22.725v5.295h22.725v10.121h-22.725v5.295h22.73v10.891h-35.822v-42.494zM78.953 2.102h21.484c14.16 0 19.168 10.475 19.168 21.185 0 13.039-6.904 21.309-21.725 21.309h-18.927v-42.494zm13.09 31.603h5.121c8.156 0 9.348-6.608 9.348-10.6 0-2.673-.836-10.111-10.301-10.111h-4.168v20.711zM138.416 28.22l-3.992-6.622-3.895 6.622h-9.594l9.107-13.39-8.77-12.809h9.596l3.555 6.332 3.654-6.332h9.594l-8.768 12.809 9.107 13.39h-9.594z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <canvas style="background-color: rgba(44, 44, 44);"></canvas>
+    <!--The begin of the body-->
+    <!-- start nav bar  -->
+    <div id="middle-layer"></div>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand text-uppercase" href="index.html" style="text-decoration: none; overflow: visible;">
+                <div id="navbar-logo" class="tedx" style="min-height:47px; overflow: visible;">
+                    <!-- الجزء المتحرك الأول -->
+                    <div class="tedx_logo_draw" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 150 47" fill="none" stroke-width="2"
+                            stroke="url(#grad-nav)">
+                            <defs>
+                                <linearGradient id="grad-nav" x1="0" y1="0" x2="100" y2="100"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0.2" stop-color="rgb(255, 135, 9)" />
+                                    <stop offset="0.8" stop-color="rgb(247, 189, 248)" />
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M13.909 12.994h-11.909v-10.892h36.897v10.892h-11.904v31.602h-13.084v-31.602zM40.931 2.102h35.817v10.892h-22.725v5.295h22.725v10.121h-22.725v5.295h22.73v10.891h-35.822v-42.494zM78.953 2.102h21.484c14.16 0 19.168 10.475 19.168 21.185 0 13.039-6.904 21.309-21.725 21.309h-18.927v-42.494zm13.09 31.603h5.121c8.156 0 9.348-6.608 9.348-10.6 0-2.673-.836-10.111-10.301-10.111h-4.168v20.711zM138.416 28.22l-3.992-6.622-3.895 6.622h-9.594l9.107-13.39-8.77-12.809h9.596l3.555 6.332 3.654-6.332h9.594l-8.768 12.809 9.107 13.39h-9.594z" />
+                        </svg>
+                        <span class="tedx_name">Maadi STEM Youth</span>
+                    </div>
+                    <!-- خط أحمر متحرك رأسي -->
+                    <div class="line_and_logo" style="display: flex; align-items: center; overflow: visible;">
+                        <div class="tedx_logo_line"
+                            style="display: none; overflow: visible; display:none; position: relative; left: -5px;  top: 18px; transform: translateY(-50%); width: 4px; background: #E62B1E; border-radius: 2px; height: 0; z-index: 2;">
+                        </div>
+                        <div class="tedx_logo_final"
+                            style="display: flex; position: absolute; align-items: center; overflow: hidden; top: 12px;">
+                            <span class="tedx_logo" style="position: relative; z-index: 3;">TEDx</span>
+                            <span class="tedx_name">Maadi STEM Youth</span>
+                        </div>
+                    </div>
+                    <div class="tedx_info" style="position: fixed; top: 49.5px;">
+                        <span class="tedx_info_x">x</span>
+                        <span class="tedx_info_text"> = independently organized TED event</span>
+                    </div>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="coming-soon.html">2025 Event</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="previous-events.html">previous events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">about us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- end nav bar -->
+    <!-- start ideas worth spreading section -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <section class="ideas-worth-spreading">
+                <!-- <div class="container"> -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="title">TEDxMaadiSTEM <br>Youth 2025</h3>
+                            <span class="theme-title"> <span style="color: #E62B1E;">Apollo:</span> What Lies
+                                Beyond</span>
+                            <div class="text" style="padding: 10px !important;">
+                                <p>This season, we uncover Apollo's legacy, focusing on his vision,
+                                    innovation, and change. We explore cyber security, astrophysics, entrepreneurship,
+                                    technology, self-discovery, youth activism, and diversity, all inspired by his
+                                    timeless fire. Join us in marching to Apollo's beat. </p>
+                            </div>
+
+                            <div class="hero-section-btn">
+                                <button onclick="location.href='coming-soon.html'"> Get your Tickets</button>
+                                <button onclick="location.href='coming-soon.html'" id="btn-2">Discover our
+                                    Event</button>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 text-center" id="image1">
+                            <div class="image-wrapper">
+                                <img src="./images/sun.png" id="sun" class="img-fluid" alt="ID07" width="80%"
+                                    height="75%">
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </section>
+            <!-- end ideas worth spreading section -->
+            <div id="what-is-tedx"></div>
+            <!-- start what is tedx section -->
+            <section class="what-is-tedx">
+                <div class="container">
+                    <div class="row">
+                        <div id="image2" class="col-md-6 img-col">
+                            <div class="apollo-frame">
+                                <img src="images/apolloWebsite.png" class="img-fluid" alt="ID08" width="70%"
+                                    id="apollo-img">
+                            </div>
+                        </div>
+                        <div class="col-md-6" id="bottom-text">
+                            <!-- <div class="text"> -->
+
+                            <!-- <img src="images/Component 34.png" class="img-fluid" id="igh"> -->
+
+                            <div class="bottom-text-box">
+
+                                <h2 id="title2">What is TEDx?</h2>
+                                <p>
+                                    In the spirit of ideas worth spreading, TED has created a program called
+                                    TEDx. TEDx is a program of local, self-organized events that bring people together
+                                    to share a TED-like
+                                    experience. Our event is called TEDxYouthMaadiSTEM, where x = independently
+                                    organized TED
+                                    event. At our TEDxYouthMaadiSTEM event, TED Talks video and live speakers will
+                                    combine to spark deep discussion and connection in a small group. The TED Conference
+                                    provides
+                                    general guidance for the TEDx program, but individual TEDx events, including ours,
+                                    are
+                                    self-organized.
+                                </p>
+                                <a href="https://www.ted.com/about/programs-initiatives/tedx-program"
+                                    style="color: #E62B1E;">Read more aboutTEDx <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                            <!-- </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end what is tedx section -->
+            <!--start footer section-->
+            <!--start footer section-->
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div id="footer-logo" class="tedx_footer1">
+                                <span class="tedx_footer">TEDx</span>
+                                <span class="tedx_logo_footer">Maadi STEM Youth</span>
+                                <div class="tedx_info_footer">
+                                    <span class="tedx_info_x_footer">x</span>
+                                    <span class="tedx_info_x_text_footer"> = independently organized TED event</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 text-center">
+                            <ul>
+                                <li><a href="https://www.facebook.com/TEDxYouthMaadiSTEM/"><i
+                                            class="fab fa-fw fa-facebook-square"></i></a></li>
+                                <li><a href="https://www.instagram.com/tedx.maadi/"><i
+                                            class="fab fa-fw fa-instagram"></i></a></li>
+                                <li><a href="mailto:tedx.maadistem@gmail.com"><i
+                                            class="fas fa-fw fa-envelope-open"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-7 text-center">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="coming-soon.html">2025 Event</a></li>
+                                <li><a href="previous-events.html">Previous Events</a></li>
+                                <li><a href="contact.html">About US</a></li>
+                            </ul>
+                            <hr>
+                            <div class="rights">
+                                &copy; <span id="demo"></span> All Rights Reserved | TEDx Maadi STEM Youth
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end footer -->
+        </div>
+    </div>
+    <!-- end footer -->
+    <!--JavaScript Files-->
+    <script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="aboutjs/gsap.min.js"></script>
+    <script src="aboutjs/ScrollTrigger.min.js"></script>
+    <script src="aboutjs/ScrollSmoother.min.js"></script>
+    <script src="aboutjs/DrawSVGPlugin.min.js"></script>
+    <script src="aboutjs/dat.gui.min.js"></script>
+    <script src="aboutjs/script.js"></script>
+    <script>
+        // Ensure DrawSVGPlugin is registered
+        gsap.registerPlugin(DrawSVGPlugin);
+        gsap.set(".tedx_logo_final", { display: "flex" });
+        gsap.set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 });
+        gsap.set(".tedx_logo_draw", { display: "none", opacity: 1 });
+        gsap.set(".tedx_logo", { x: 0, opacity: 1 });
+        gsap.set(".tedx_name", { display: "flex" });
+        gsap.set(".loading_logo", { display: "flex", opacity: 1 });
+        function hideLoadingScreen() {
+            ScrollSmoother.get().paused(false);
+            gsap.to("#loadingScreen", {
+                duration: 1.2,
+                y: "-120%",
+                ease: "power2.inOut",
+                onComplete: () => {
+                    document.getElementById("loadingScreen").style.display = "none";
+                }
+            });
+        }
+        function animateLogo() {
+            gsap.from(".loading_logo svg path", {
+                duration: 2,
+                drawSVG: "0% 0%",
+                ease: "power1.in",
+                onComplete: () => {
+                    if (document.readyState === "complete") {
+                        hideLoadingScreen();
+                        return;
+                    }
+                    gsap.to(".loading_logo svg path", {
+                        duration: 2,
+                        drawSVG: "0% 0%",
+                        ease: "power1.inOut",
+                        onComplete: () => {
+                            if (document.readyState === "complete") {
+                                hideLoadingScreen();
+                            } else {
+                                animateLogo();
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        animateLogo();
+    </script>
+    <script>
+        // Ensure DrawSVGPlugin is registered
+        gsap.registerPlugin(DrawSVGPlugin);
+
+        const tl = gsap.timeline({ repeat: -1, defaults: { duration: 5, ease: "power1.inOut" } });
+
+        gsap.set(".tedx_logo_final", { display: "flex" });
+        gsap.set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 });
+        gsap.set(".tedx_logo_draw", { display: "none", opacity: 1 });
+        gsap.set(".tedx_logo", { x: 0, opacity: 1 });
+        gsap.set(".tedx_name", { display: "flex" });
+
+        // 1. Start with static logo and line
+        tl.set(".tedx_logo_final", { display: "flex" })
+            .set(".tedx_logo_line", { display: "none", height: "30px", opacity: 1 })
+            .set(".tedx_logo_draw", { opacity: 1, display: "none" })
+            .set(".tedx_name", { display: "flex" })
+            // 3. Slide in the TEDx text only from behind the line (not Maadi STEM Youth)
+            .set(".tedx_logo_final", { display: "flex" })
+            .set(".tedx_name", { display: "flex" })
+            .set(".tedx_name", { display: "flex" })
+            .to(".tedx_logo", { duration: 0.8, x: 0, opacity: 1 }, ">")
+            .to({}, { duration: 0.8 })
+            // 4. Keep the red line visible while static logo is present
+            // 5. Hold static logo for 3.5s
+            .to(".tedx_logo_line", { duration: 0.4, height: 0, ease: "power1.in" }, "<")
+            .to({}, { duration: 7 })
+            .to(".tedx_logo_line", { display: "block", duration: 0.4, height: "30px" }, ">")
+            // 6. Animate TEDx text out to the left, fade out, and then hide static logo and red line
+            .to(".tedx_logo", { duration: 0.8, x: -90, opacity: 1 }, ">")
+            .to({}, { duration: 0.8 })
+            .to(".tedx_logo_line", { duration: 0.4, height: 0, ease: "power1.in" }, "<")
+            .set(".tedx_logo_final", { display: "none" })
+            .set(".tedx_logo_line", { display: "none", height: 0, opacity: 1 })
+            .set(".tedx_logo_draw", { display: "flex" })
+            // 7. Show and animate SVG draw
+            .from(".tedx_logo_draw svg path", { duration: 2.5, drawSVG: "0% 0%" })
+            .to({}, { duration: 7 })
+            .to(".tedx_logo_draw svg path", { duration: 1, drawSVG: "100% 100%" })
+            // 8. Wait, then reset
+            .set(".tedx_logo_draw", { display: "none" })
+            .set(".tedx_logo_final", { display: "flex" })
+            .to(".tedx_logo_line", { display: "block", duration: 0.4, height: "30px" }, ">")
+            .to(".tedx_logo", { duration: 0.8, x: 0, opacity: 1 }, ">")
+            .to({}, { duration: 0.8 })
+            .to(".tedx_logo_line", { duration: 0.4, height: 0, ease: "power1.in" }, "<")
+            ;
+    </script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+        ScrollSmoother.create({
+            wrapper: "#smooth-wrapper",
+            content: "#smooth-content",
+            smooth: 1.5,
+            effects: true
+        });
+        ScrollSmoother.get().paused(true);
+    </script>
+    <script>
+        gsap.to("#scrollProgressBar", {
+            width: "100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#smooth-content",
+                start: () => "top top",
+                end: () => "761",
+                scrub: true
+            }
+        });
+    </script>
+    <!--End of JavaScript Files-->
+    <!--The end of the body-->
+</body>
+
+
+</html>
