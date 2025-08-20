@@ -39,6 +39,78 @@ body {
     box-shadow: 0 0 20px rgba(179, 0, 0, 0.9);
 }
 
+/* Group Ticket Button */
+.group-ticket-button {
+    position: fixed;
+    top: 20px;
+    left: 80px;
+    height: 50px;
+    background: rgba(179, 0, 0, 0.8);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.7);
+    padding: 0 15px;
+    gap: 8px;
+}
+
+.group-ticket-button:hover {
+    background: rgba(179, 0, 0, 1);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(179, 0, 0, 0.9);
+}
+
+.button-text {
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+/* Responsive adjustments for buttons */
+@media (max-width: 768px) {
+    .group-ticket-button {
+        left: 70px;
+        height: 45px;
+        font-size: 0.9rem;
+        padding: 0 12px;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-button, .group-ticket-button {
+        top: 15px;
+    }
+    
+    .home-button {
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .group-ticket-button {
+        left: 60px;
+        height: 40px;
+        font-size: 0.8rem;
+        padding: 0 10px;
+        gap: 5px;
+    }
+    
+    .button-text {
+        display: none;
+    }
+    
+    .group-ticket-button:hover .button-text {
+        display: inline;
+    }
+}
+
 /* Greek Background */
 #greek-letter-bg {
     position: fixed;
