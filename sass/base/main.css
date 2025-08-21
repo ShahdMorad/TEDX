@@ -103,7 +103,9 @@ font-size: 12px !important;
 }
 
 .col-md-6 {
-padding: 40px;
+padding: 5%;
+padding-left: 5% !important;
+margin-right: 0px !important;
 /* margin-top: 30px; */
 }
 
@@ -136,6 +138,12 @@ transform: translateY(-60px) scale(1.1);
 width: 480px;
 height: 480px;
 background-image: radial-gradient(rgb(203, 26, 26), rgba(203, 26, 26, 0.742), transparent, transparent);
+}
+#image2{
+  margin-right: 20%;
+}
+.what-is-tedx .row{
+  padding: 0px;
 }
 
 @media(max-width: 576px) {
