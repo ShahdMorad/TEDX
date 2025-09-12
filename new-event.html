@@ -50,12 +50,24 @@
     #sentence {
       font-size: 500;
     }
+    @media (max-width: 768px){
+      #sentence {
+        font-size: 200;
+      }
+      #loadingScreen{
+        font-size: 1em;
+        margin-top: 0% !important;
+      }
+      #pre-loader-content{
+        margin-top: 0px !important;
+      }
+    }
   </style>
 </head>
 <body>
     <div id="loadingScreen">
         <div id="goldStrip"></div>
-        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+        <div id="pre-loader-content" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 10 140 60" style="display: block; margin: 0 auto 38px auto; width: 500px; max-width: 98vw;">
             <defs>
               <!-- جريدينت دهبي فخم -->
@@ -190,29 +202,24 @@ Our vision is to bring the light to the world, inspired by the shadowed lines of
   <button onclick="location.href='agenda.pdf'" class="cta-btn" target="_blank">📄 View Agenda</button>
 
 </div>
-   <!--  
+    
 <section class="sponsors-section" id="sponsors">
   <h2>Sponsors</h2>
   <div class="sponsor-grid">
-    <div class="sponsor-card">
-      <img src="image-removebg-preview (4).png" alt="Sponsor">
+    <div class="sponsor-card" style="background-image: url(./images/speakers/TGI.JPG);">
     </div>
-    <div class="sponsor-card">
-      <img src="image-removebg-preview (5).png" alt="Sponsor">
+    <div class="sponsor-card" style="background-image: url(./images/speakers/BNS-Physics.JPG);">
     </div>
-    <div class="sponsor-card">
-      <img src="image-removebg-preview (6).png" alt="Sponsor">
+    <div class="sponsor-card" style="background-image: url(./images/speakers/astro.jpeg);">
     </div>
-    <div class="sponsor-card">
-      <img src="image-removebg-preview (7).png" alt="Sponsor">
+    <div class="sponsor-card" style="background-image: url(./images/speakers/HACKSY\ CS\ Club_20250909_184925_0000.png);">
     </div>
-    <div class="sponsor-card">
-      <img src="image-removebg-preview (8).png" alt="Sponsor">
+    <div class="sponsor-card" style="background-image: url(./images/speakers/IMG_2685.PNG); background-color: white;" >
     </div>
-    <div class="sponsor-card">
+    <!-- <div class="sponsor-card">
       <img src="image-removebg-preview (9).png" alt="Sponsor">
     </div>
-  </div>
+  </div> -->
 </section>
 
 <section class="speakers-section">
@@ -221,40 +228,40 @@ Our vision is to bring the light to the world, inspired by the shadowed lines of
     <button class="scroll-btn left">&#8592;</button>
     <div class="carousel" id="carousel">
       <div class="card">
-        <img src="./imgs/person 4.jpg" alt="Speaker 1">
-        <h3>Bill Gates</h3>
-        <p>Co-founder of microsoft</p>
+        <img src="./images/speakers/Ahmed-tahseen.JPG" alt="Speaker 1">
+        <h3>Ahmed Tahseen</h3>
+        <p>History Content Creator</p>
       </div>
       <div class="card">
-        <img src="./imgs/person 3.jpg" alt="Speaker 2">
-        <h3>Steve Jobs</h3>
-        <p>Founder of Apple</p>
+        <img src="./images/speakers/Amr-hadid.jpeg" alt="Speaker 2">
+        <h3>Amr Hadid</h3>
+        <p>    </p>
       </div>
       <div class="card">
-        <img src="./imgs/person 2.jpg" alt="Speaker 3">
-        <h3>Maha hossam</h3>
-        <p>Founder of Samsung</p>
+        <img src="./images/speakers/Hany-Shaker.jpeg" alt="Speaker 3">
+        <h3>Hany Shaker</h3>
+        <p>Founder of Dr Potter Academy </p>
       </div>
       <div class="card">
-        <img src="./imgs/person 5.jpg" alt="Speaker 4">
-        <h3>Mark Zuckerberg</h3>
-        <p>Facebook CEO</p>
+        <img src="./images/speakers/Eng Ahmed Yassin.jpeg" alt="Speaker 4">
+        <h3>Eng. Ahmed Yassin</h3>
+        <p>       </p>
       </div>
       <div class="card">
-        <img src="./imgs/person 6.jpg" alt="Speaker 5">
-        <h3>Andy Jassy</h3>
-        <p>Amazon CEO</p>
+        <img src="./images/speakers/Anas Elsharnoby.jpeg" alt="Speaker 5">
+        <h3>Dr. Anas Elsharnoby</h3>
+        <p>- Cardiologist at the Medical National Institute.</p>
       </div>
       <div class="card">
-        <img src="./imgs/person 5.jpg" alt="Speaker 6">
-        <h3>Mark Zuckerberg</h3>
-        <p>Facebook CEO</p>
+        <img src="./images/speakers/eslam-hamada.jpeg" alt="Speaker 6">
+        <h3>Eslam Hamada</h3>
+        <p>     </p>
       </div>
     </div>
     <button class="scroll-btn right">&#8594;</button>
   </div>
 </section>
--->
+
 
  <h2 class="ticket interactive-text">Book Your Ticket Here</h2>
 
@@ -266,7 +273,7 @@ Our vision is to bring the light to the world, inspired by the shadowed lines of
 
   <div class="cta-option">
     <span class="cta-label">Save Big with a Group of 5</span>
-    <button onclick="location.href='individual.html'" class="cta-btn">Book Group Pass</button>
+    <button onclick="location.href='individual.html'" class="cta-btn">Book Group Offer</button>
   </div>
 </div>
 
@@ -282,7 +289,8 @@ Our vision is to bring the light to the world, inspired by the shadowed lines of
 
   <div class="map-wrapper">
   <iframe
-    src="https://www.google.com/maps?q=Heliopolis%20University%2C%203%20Cairo%20-%20Belbeis%20Desert%20Rd%2C%20El%20Salam%20City%2C%20Cairo%20Governorate%2011785%2C%20Egypt&output=embed"
+    src="https://www.google.com/maps?q=Cultural+Creative+Artistic+Center+6th+of+October+Giza+Egypt&output=embed" 
+    
     allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade">
@@ -369,7 +377,7 @@ Our vision is to bring the light to the world, inspired by the shadowed lines of
     <script src="aboutjs/DrawSVGPlugin.min.js"></script>
     <script src="aboutjs/dat.gui.min.js"></script>
     <script src="aboutjs/script.js"></script>
-    <script src="/aboutjs/ScrambleTextPlugin.min.js"></script>
+    <script src="aboutjs/ScrambleTextPlugin.min.js"></script>
     <script>
       //Dynamic Year//
       var d = new Date();
