@@ -330,7 +330,7 @@ position: absolute;
     top: -100px;
     left: 50%;
     transform: translate(-155px, 31px);
-    width: 228px;
+    width: 208px;
     transition: top 0.3s ease;
     z-index: 3;
     filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
@@ -344,7 +344,7 @@ position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-199px, 162px);
-    width: 321px;
+    width: 290px;
     z-index: 2;
 }
 /* ✅ Media Query for small screens */
@@ -365,7 +365,7 @@ position: absolute;
   top: 50%;
   left: 48%;
   transform: translate(-50%, -0.5%); /* نزل Apollo لتحت شوية */
-  font-size: 264px;
+  font-size: 220px;
   color: #E62B1E;
   font-family: 'myfont', serif;
   transition: top 0.3s ease;
@@ -417,7 +417,7 @@ position: absolute;
 }
 
 h2 {
-  font-size: 80px;
+  font-size: 60px !important;
   color: red;
   margin-bottom: 20px;
   font-family: 'myfont', sans-serif;
@@ -763,7 +763,7 @@ h2 {
       box-shadow: 0 0 20px rgba(255, 43, 6, 0.3);
       transition: box-shadow 0.3s ease, transform 0.3s ease;
       flex: 1 1 45%;
-      max-width: 550px;
+      max-width: 500px;
       text-align: center;
     }
 
@@ -773,13 +773,13 @@ h2 {
     }
 
     .stone-title {
-      font-size: 1.8rem;
+      font-size: 1.8rem !important;
       color: #ff2b06;
       margin-bottom: 20px;
     }
 
     .engraved-text {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.8;
       color: #ffffffff;
       text-shadow: 
