@@ -81,12 +81,28 @@
 				<!-- Add this section above the transaction number field -->
 				<div class="payment-instructions">
 					<h3>Payment Instructions</h3>
-					<p>Please make your payment of 250 EGP using one of the following methods:</p>
+					<p>Please make your payment using one of the following methods:</p>
 					<ul>
 						<li>Vodafone Cash: <strong>01062230107</strong></li>
 						<li>InstaPay: <strong>01556427989</strong></li>
 					</ul>
 					<p>After payment, please enter the phone number you used to transfer the money in the transaction field below.</p>
+				</div>
+				
+				<!-- Payment Method Selection -->
+				<div class="form-group">
+					<label class="required">Payment Method</label>
+					<div class="payment-methods">
+						<div class="payment-method-option">
+							<input type="radio" id="vodafone" name="paymentMethod" value="vodafone">
+							<label for="vodafone">Vodafone Cash</label>
+						</div>
+						<div class="payment-method-option">
+							<input type="radio" id="instapay" name="paymentMethod" value="instapay">
+							<label for="instapay">InstaPay</label>
+						</div>
+					</div>
+					<div class="error" id="paymentMethodError">Please select a payment method</div>
 				</div>
 				
                 <div class="form-group">
@@ -97,7 +113,6 @@
                 
                 <div class="form-group">
                     <label for="promo">Promo Code (Optional)</label>
-					<label for="promo">If you have a promo code, the price will be 200 EGP only.</label>
                     <input type="text" id="promo" name="promo" placeholder="Enter promo code if you have one">
                 </div>
                 
@@ -116,7 +131,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
-<script src="firebase-config.js"></script>
+<script src="/firebase-config.js"></script>
 <script src="scriptssss.js"></script>
 </body>
 </html>
