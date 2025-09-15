@@ -271,7 +271,7 @@
 					<!-- Add this section above the transaction number field -->
 					<div class="payment-instructions">
 						<h3>Payment Instructions</h3>
-						<p>Please make your payment of 1000 EGP using one of the following methods:</p>
+						<p>Please make your payment using one of the following methods:</p>
 						<ul>
 							<li>Vodafone Cash: <strong>01062230107</strong></li>
 							<li>InstaPay: <strong>01556427989</strong></li>
@@ -280,6 +280,22 @@
 					</div>
 
                     
+					<!-- Payment Method Selection -->
+					<div class="form-group">
+						<label class="required">Payment Method</label>
+						<div class="payment-methods">
+							<div class="payment-method-option">
+								<input type="radio" id="vodafone" name="paymentMethod" value="vodafone">
+								<label for="vodafone">Vodafone Cash</label>
+							</div>
+							<div class="payment-method-option">
+								<input type="radio" id="instapay" name="paymentMethod" value="instapay">
+								<label for="instapay">InstaPay</label>
+							</div>
+						</div>
+						<div class="error" id="paymentMethodError">Please select a payment method</div>
+					</div>
+					
                     <div class="form-row">
                         <div class="form-group">
                             <label for="transaction" class="required">Transaction Number</label>
@@ -317,7 +333,7 @@
         <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
-<script src="firebase-config.js"></script>
+<script src="../firebase-config.js"></script>
 
 <script src="scripts.js"></script>
 </body>
