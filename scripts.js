@@ -1,6 +1,5 @@
 // Initialize Firebase (make sure you have this configured)
 
-
 // Create Greek letter background (same as before)
 const greekLetters = ["Α", "Β", "Γ", "Δ", "Ε", "Ζ", "Η", "Θ", "Ι", "Κ", "Λ", "Μ", "Ν", "Ξ", "Ο", "Π", "Ρ", "Σ", "Τ", "Υ", "Φ", "Χ", "Ψ", "Ω"];
 const bgContainer = document.getElementById('greek-letter-bg');
@@ -97,14 +96,32 @@ form.addEventListener('submit', async function(e) {
                 faculty: faculty.value.trim(),
                 grade: grade.value.trim(),
                 nameLower: name.value.trim().toLowerCase()
-                
             });
         }
     }
     
-    // Validate transaction number
+    // Validate payment method
+    const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+    let paymentMethodSelected = false;
+    let selectedPaymentMethod = null;
+    for (const method of paymentMethods) {
+        if (method.checked) {
+            paymentMethodSelected = true;
+            selectedPaymentMethod = method.value;
+            break;
+        }
+    }
+    if (!paymentMethodSelected) {
+        document.getElementById('paymentMethodError').style.display = 'block';
+        isValid = false;
+    }
+
+    // Validate transaction number (11 digits required)
     const transaction = document.getElementById('transaction');
-    if (!transaction.value.trim()) {
+    const transactionRegex = /^\d{11}$/;
+    if (!transaction.value.trim() || !transactionRegex.test(transaction.value)) {
+        document.getElementById('transactionError').textContent = 
+            'Transaction number must be exactly 11 digits';
         document.getElementById('transactionError').style.display = 'block';
         isValid = false;
     }
@@ -121,6 +138,7 @@ form.addEventListener('submit', async function(e) {
             const groupData = {
                 groupId: groupId,
                 transaction: transaction.value.trim(),
+                paymentMethod: selectedPaymentMethod, // Add payment method to group data
                 promoCode: promo,
                 registeredAt: firebase.firestore.FieldValue.serverTimestamp(),
                 status: "not_entered",
@@ -142,6 +160,7 @@ form.addEventListener('submit', async function(e) {
                     groupId: groupId,
                     groupRole: index === 0 ? 'leader' : 'member', // First member is leader
                     transaction: transaction.value.trim(),
+                    paymentMethod: selectedPaymentMethod, // Add payment method to each attendee
                     status: "not_entered",
                     registeredAt: firebase.firestore.FieldValue.serverTimestamp()
                 });
@@ -188,11 +207,3 @@ document.querySelectorAll('input, select').forEach(el => {
         }
     });
 });
-
-
-
-
-
-
-
-// Function to fill form with test data
