@@ -77,13 +77,40 @@ form.addEventListener('submit', async (e) => {
         if (isValid) grade.focus();
     }
     
-    // Validate transaction number
-    const transaction = document.getElementById('transaction');
-    if (!transaction.value.trim()) {
-        document.getElementById('transactionError').style.display = 'block';
-        isValid = false;
-        if (isValid) transaction.focus();
+	// ADD THIS AFTER grade validation (before transaction validation)
+	// Validate payment method
+	const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+	let paymentMethodSelected = false;
+	for (const method of paymentMethods) {
+		if (method.checked) {
+			paymentMethodSelected = true;
+			break;
+		}
+	}
+	if (!paymentMethodSelected) {
+		document.getElementById('paymentMethodError').style.display = 'block';
+		isValid = false;
+	}
+
+    // Get selected payment method
+let selectedPaymentMethod = null;
+for (const method of paymentMethods) {
+    if (method.checked) {
+        selectedPaymentMethod = method.value;
+        break;
     }
+}
+
+	// REPLACE EXISTING TRANSACTION VALIDATION WITH THIS
+	// Validate transaction number (11 digits required)
+	const transaction = document.getElementById('transaction');
+	const transactionRegex = /^\d{11}$/;
+	if (!transaction.value.trim() || !transactionRegex.test(transaction.value)) {
+		document.getElementById('transactionError').textContent = 
+			'Transaction number must be exactly 11 digits';
+		document.getElementById('transactionError').style.display = 'block';
+		isValid = false;
+	}
     
     // If valid, show success animation
     if (isValid) {
@@ -94,6 +121,7 @@ form.addEventListener('submit', async (e) => {
             phone: phone.value.trim(),
             faculty: faculty.value.trim(),
             grade: grade.value.trim(),
+            paymentMethod: selectedPaymentMethod,
             transaction: transaction.value.trim(),
             promo: document.getElementById('promo').value.trim() || null,
             status: "not_entered",
