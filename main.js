@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
   /** ===================== 🎶 LYRE SCROLL ===================== **/
   const lyre = document.getElementById("lyre");
   const apolloText = document.getElementById("apollo-text");
@@ -120,3 +121,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tedx.style.transform = `translate(${moveX}px, ${moveY}px)`;
   });
+
