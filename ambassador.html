@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEDx Space Odyssey - Ambassador Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <link rel="stylesheet" href="styles_amb.css">
+
+</head>
+<body>
+    <!-- Dashboard Content -->
+    <div id="dashboardContent">
+        <header class="dashboard-header">
+            <div class="tedx-logo">TEDx</div>
+            <h1 class="event-title">SPACE ODYSSEY AMBASSADOR DASHBOARD</h1>
+            <div class="user-info">
+                <span>Welcome, Ambassador</span>
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="totalReferrals">0</div>
+                <div class="stat-label">Total Referrals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="paidReferrals">0</div>
+                <div class="stat-label">Paid Referrals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="attendedReferrals">0</div>
+                <div class="stat-label">Attended Referrals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="conversionRate">0%</div>
+                <div class="stat-label">Conversion Rate</div>
+            </div>
+        </div>
+
+        <div class="ambassador-search">
+            <h2 class="search-title">TRACK YOUR REFERRALS</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" id="promoCodeInput" placeholder="Enter your promo code (e.g. XXX00)">
+                <button class="search-btn" id="searchPromoBtn">
+                    <i class="fas fa-search"></i> FIND REFERRALS
+                </button>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <h2 class="results-title" id="resultsTitle">YOUR REFERRALS</h2>
+            <div class="referrals-list" id="referralsList">
+                <div class="no-referrals" id="noReferralsMessage">
+                    <i class="fas fa-users" style="font-size: 48px; margin-bottom: 15px; color: #e50914;"></i>
+                    <p>Enter your promo code above to see your referrals</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>TEDx Space Odyssey &copy; 2023 | Ambassador Referral Program</p>
+        </div>
+    </div>
+
+    <script src="script_amb.js"></script>
+</body>
+</html>
