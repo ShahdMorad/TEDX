@@ -260,18 +260,8 @@ body {
   font-family: 'Cinzel', serif;
   padding: 20px;
   
+  
 }
-.background-letters {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
 .background-letters {
   position: fixed;
   top: 0;
@@ -286,10 +276,14 @@ body {
 .background-letters span {
   position: absolute;
   color: rgba(255, 255, 255, 0.45);
-  font-size: 2rem;
+  font-size: calc(3vw + 10px); /* ✅ base scaling */
   animation: float 10s linear infinite;
   user-select: none;
   transition: transform 0.3s ease, color 0.3s ease;
+
+  /* ✅ random positioning */
+  top: calc(var(--randY, 50) * 1%);
+  left: calc(var(--randX, 50) * 1%);
 }
 
 .background-letters span:hover {
@@ -307,64 +301,64 @@ body {
   }
 }
 
-    ::selection {
-        background: #a71f15;
-        color: white;
-    }
+::selection {
+  background: #a71f15;
+  color: white;
+}
+
+/* ✅ Mobile fine-tuning */
+@media (max-width: 768px) {
+  .background-letters span {
+    font-size: calc(6vw + 8px); /* larger letters */
+  }
+}
+
+@media (max-width: 480px) {
+  .background-letters span {
+    font-size: calc(8vw + 6px); /* very bold on small phones */
+    animation-duration: 12s; /* a bit slower for readability */
+  }
+}
 
 
 
 section.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centers vertically */
+  height: 100vh;
   position: relative;
-  width: 103.5vw;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: 60px;
-  height: 100vh;
+  text-align: center;
 }
-
-
-
+/* === Desktop Defaults (your originals kept) === */
 #lyre {
-position: absolute;
-    top: -100px;
-    left: 50%;
-    transform: translate(-155px, 31px);
-    width: 208px;
-    transition: top 0.3s ease;
-    z-index: 3;
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
-    
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translate(-155px, 173px);
+  width: 208px;
+  transition: top 0.3s ease;
+  z-index: 3;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
+  margin-bottom: 2rem;
 }
-
-
 
 #decoration {
   position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-199px, 162px);
-    width: 290px;
-    z-index: 2;
+  height: 353px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-199px, 162px);
+  width: 295px;
+  z-index: 2;
 }
-/* ✅ Media Query for small screens */
-@media (max-width: 768px) {
-  #lyre {
-    width: 35vw;
-    transform: translate(-50%, 20px); /* centered & lowered slightly */
-  }
 
-  #decoration {
-    width: 50vw;
-    transform: translate(-50%, 80px);
-  }
-}
-  
 #apollo-text {
   position: absolute;
   top: 50%;
   left: 48%;
-  transform: translate(-50%, -0.5%); /* نزل Apollo لتحت شوية */
+  transform: translate(-50%, 62.5%);
   font-size: 220px;
   color: #E62B1E;
   font-family: 'myfont', serif;
@@ -379,20 +373,34 @@ position: absolute;
   position: absolute;
   top: 50%;
   left: 48%;
-  transform: translate(-50%, 405%); /* نزل Beyond the Lyre تحت Apollo */
+  transform: translate(-50%, 434.4%);
   font-size: 60px;
   color: #E62B1E;
   font-family: 'myfont', serif;
   transition: top 0.3s ease;
-  z-index: 4;
+  z-index: 5;
   text-shadow: 2px 2px 8px #000;
   letter-spacing: 10px;
   font-weight: 100;
+  margin-top: 1rem;
+  margin-bottom: 100px;
 }
-/* ✅ Media Query for small screens */
+
+/* === Tablet & small laptops === */
 @media (max-width: 768px) {
+  #lyre {
+    width: 35vw;
+    transform: translate(-50%, 20px);
+    top: 0;
+  }
+
+  #decoration {
+    width: 50vw;
+    transform: translate(-50%, 60px);
+  }
+
   #apollo-text {
-    font-size: 20vw;         /* 20% of screen width */
+    font-size: 20vw;
     letter-spacing: 2vw;
     transform: translate(-50%, -10%);
     top: 40%;
@@ -405,6 +413,30 @@ position: absolute;
   }
 }
 
+/* === Very small phones (≤480px) === */
+@media (max-width: 480px) {
+  #lyre {
+    width: 45vw; /* slightly larger for visibility */
+    top: 10px;
+  }
+
+  #decoration {
+    width: 60vw;
+    transform: translate(-50%, 40px);
+  }
+
+  #apollo-text {
+    font-size: 18vw;
+    letter-spacing: 1.5vw;
+    top: 35%;
+  }
+
+  #sub {
+    font-size: 7vw;
+    letter-spacing: 1vw;
+    top: 55%; /* move closer to Apollo */
+  }
+}
 
 
 .speakers-section {
@@ -417,7 +449,7 @@ position: absolute;
 }
 
 h2 {
-  font-size: 60px !important;
+  font-size: 75px !important;
   color: red;
   margin-bottom: 20px;
   font-family: 'myfont', sans-serif;
@@ -438,7 +470,11 @@ h2 {
   scrollbar-width: none;
   padding-bottom: 0.625rem;
   overflow: visible;
+  overflow-x: auto; /* ✅ allow scrolling */
+  overflow-y: hidden; /* ✅ keep vertical clean */
 }
+
+
 
 .carousel::-webkit-scrollbar {
   display: none;
@@ -478,7 +514,7 @@ h2 {
   font-size: 2rem;
   padding: 10px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 9999;
 }
 
 /* Position scroll buttons */
@@ -489,6 +525,24 @@ h2 {
 .scroll-btn.right {
   right: 10px;
 }
+/* ---------- Quick override to make carousel buttons work ---------- */
+.carousel-container { position: relative; } /* ensure absolute buttons are positioned relative */
+
+.carousel {
+  position: relative;
+  z-index: 1;                           /* keep cards under buttons */
+  overflow-x: auto !important;         /* make it a real horizontal scroll container */
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;    /* smooth touch on iOS */
+  scroll-behavior: smooth;
+}
+
+/* make sure buttons are clickable and above everything */
+.scroll-btn {
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
 
 /* ===== Mobile Responsive ===== */
 @media (max-width: 768px) {
@@ -715,11 +769,17 @@ h2 {
     
     .countdown-apollo {
   font-family: 'myfont', serif;
-  font-size: 40px;
+  font-size: 48px;
   color: #e62b1e;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 150px;
+  margin-bottom: 150px;
   letter-spacing: 3px;
+  transform: translate(-41px,50px);
+
+  position: relative;
+  z-index: 10;
+  
 }
  @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap');
 .tedx-wrapper {
@@ -1192,3 +1252,4 @@ iframe {
     padding: 8px 15px;
   }
 }
+
