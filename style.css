@@ -1065,6 +1065,7 @@ iframe {
   font-size: 100px;
   margin-bottom: 40px;
   letter-spacing: 1px;
+ font-family: 'myfont', serif;
 }
 
 /* Grid layout adjusts automatically for different screen widths */
@@ -1165,6 +1166,7 @@ iframe {
 
 .center-heading-wrapper h2 {
   font-size: 62px;
+  font-family: 'myfont', serif;
   padding: 12px 30px;
   margin: 0;
   color: red;
@@ -1186,6 +1188,7 @@ iframe {
     padding: 8px 15px;
   }
 }
+
 
 
 
