@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".carousel");
   const leftBtn = document.querySelector(".scroll-btn.left");
   const rightBtn = document.querySelector(".scroll-btn.right");
-  const carousel = document.querySelector(".carousel");
 
   if (!carousel || !leftBtn || !rightBtn) return;
 
-  // Width of one card + gap
+  // width of 1 card + gap
   const getScrollAmount = () => {
     const card = carousel.querySelector(".card");
     if (!card) return 300; // fallback
     const cardStyle = window.getComputedStyle(card);
+    const cardWidth = card.offsetWidth;
     const gap = parseInt(window.getComputedStyle(carousel).gap) || 20;
-    return card.offsetWidth + gap;
+    return cardWidth + gap;
   };
 
   leftBtn.addEventListener("click", () => {
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     carousel.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
   });
 });
+
 
 
 
@@ -121,4 +123,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tedx.style.transform = `translate(${moveX}px, ${moveY}px)`;
   });
+
 
