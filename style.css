@@ -413,7 +413,6 @@ position: absolute;
   padding: 50px 20px;
   text-align: center;
   font-family: 'Helvetica', sans-serif;
-  height: 100vh;
 }
 
 .speakers-section h2 {
@@ -433,7 +432,6 @@ position: absolute;
   display: flex;
   gap: 20px; /* must match JS */
   overflow-x: auto; /* 🔑 actual horizontal scrolling */
-  overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
   padding: 10px 0;
@@ -1188,5 +1186,6 @@ iframe {
     padding: 8px 15px;
   }
 }
+
 
 
