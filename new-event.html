@@ -12,10 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <!-- Bootstrap CSS (optional if already using it) -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -203,6 +200,30 @@ Our vision is to bring the light to the world, inspired by the shadowed lines of
   <button onclick="location.href='agenda.pdf'" class="cta-btn" target="_blank">📄 View Agenda</button>
 
 </div>
+          <style>
+            .scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  color: red;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* Position scroll buttons */
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+/* ------
+          </style>
     
 <section class="sponsors-section" id="sponsors">
   <h2>Sponsors</h2>
@@ -525,8 +546,33 @@ Our vision is to bring the light to the world, inspired by the shadowed lines of
   mass: 1,
   restDelta: 0.001,
 };
+      document.addEventListener("DOMContentLoaded", () => {
+  const leftBtn = document.querySelector(".scroll-btn.left");
+  const rightBtn = document.querySelector(".scroll-btn.right");
+  const carousel = document.querySelector(".carousel");
+
+  if (!carousel || !leftBtn || !rightBtn) return;
+
+  // Width of one card + gap
+  const getScrollAmount = () => {
+    const card = carousel.querySelector(".card");
+    if (!card) return 300; // fallback
+    const cardStyle = window.getComputedStyle(card);
+    const gap = parseInt(window.getComputedStyle(carousel).gap) || 20;
+    return card.offsetWidth + gap;
+  };
+
+  leftBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+  });
+
+  rightBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+  });
+});
     </script>
 </body>
 
 </html>
+
 
