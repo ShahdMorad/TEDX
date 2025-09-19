@@ -250,6 +250,7 @@
 h2{
   margin: 0;
   padding: 0;
+  font-family:'myfont',serif;
 
 }
 body {
@@ -997,6 +998,7 @@ iframe {
     h2 {
       font-size: 80px;
       margin-bottom: 20px;
+      font-family:'myfont',serif;!important
     }
 
     .cta-btn {
@@ -1065,7 +1067,7 @@ iframe {
   font-size: 100px;
   margin-bottom: 40px;
   letter-spacing: 1px;
-  font-family:'myfont';!important
+  font-family:'myfont'; !important
 }
 
 /* Grid layout adjusts automatically for different screen widths */
@@ -1124,6 +1126,8 @@ iframe {
   .sponsors-section h2 {
     font-size: 45px;
     margin-bottom: 30px;
+  
+    
   }
 
   .sponsor-grid {
@@ -1188,3 +1192,4 @@ iframe {
     padding: 8px 15px;
   }
 }
+
